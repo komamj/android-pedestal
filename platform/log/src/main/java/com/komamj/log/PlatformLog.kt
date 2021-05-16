@@ -14,15 +14,31 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.log
 
 import android.app.Application
-import com.komamj.log.PlatformLog
+import timber.log.Timber
 
-class PedestalDemoApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
+object PlatformLog {
+    private lateinit var application: Application
+    private var isDebug = true
 
-        PlatformLog.init(this, isDebug = true)
+    @JvmStatic
+    fun init(application: Application, isDebug: Boolean = true) {
+        PlatformLog.application = application
+
+        if (isDebug) {
+            Timber.plant(DebugTree())
+        } else {
+            Timber.plant(ReleaseTree())
+        }
+    }
+
+    inline fun d(message: () -> String) {
+        Timber.d(message.invoke())
+    }
+
+    inline fun e(throwable: Throwable, message: () -> String) {
+        Timber.e(throwable, message.invoke())
     }
 }

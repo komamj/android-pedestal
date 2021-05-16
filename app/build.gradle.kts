@@ -10,7 +10,7 @@ android {
     buildToolsVersion(Versions.buildTools)
 
     defaultConfig {
-        applicationId = "com.komamj.host.demo"
+        applicationId = "com.komamj.pedestal.demo"
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
         versionCode = 1
@@ -61,4 +61,6 @@ android {
 
 dependencies {
     base()
+
+    implementation(project(":log"))
 }

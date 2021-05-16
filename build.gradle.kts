@@ -11,6 +11,10 @@ buildscript {
     }
 }
 
+plugins {
+    id("com.diffplug.spotless") version Versions.spotless apply true
+}
+
 allprojects {
     repositories {
         google()
@@ -18,10 +22,37 @@ allprojects {
     }
 }
 
+subprojects {
+    apply(plugin = "com.diffplug.spotless")
+    configure<com.diffplug.gradle.spotless.SpotlessExtension> {
+        kotlin {
+            target("**/*.kt")
+            ktlint(Versions.ktlint).userData(
+                mapOf(
+                    "disabled_rules" to "no-wildcard-imports",
+                    "max_line_length" to "120"
+                )
+            )
+            licenseHeaderFile(rootProject.file("copyright.kt"))
+        }
+        kotlinGradle {
+            target("**/*.gradle.kts")
+            ktlint(Versions.ktlint)
+        }
+    }
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        kotlinOptions {
+            // Treat all Kotlin warnings as errors
+            allWarningsAsErrors = true
+        }
+    }
+}
+
 tasks.register<Exec>("installHooks") {
     commandLine("sh", "scripts/install-hooks.sh")
 }
 
+/*
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
-}
+}*/

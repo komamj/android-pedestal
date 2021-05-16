@@ -12,7 +12,7 @@ buildscript {
 }
 
 plugins {
-    id("com.diffplug.spotless") version Versions.spotless apply true
+    id("com.diffplug.spotless") version Versions.spotless apply false
 }
 
 allprojects {

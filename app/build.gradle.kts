@@ -45,6 +45,7 @@ android {
     lintOptions {
         isAbortOnError = true
         isIgnoreWarnings = true
+        lintConfig = rootProject.file("lint.xml")
     }
 
     applicationVariants.all {

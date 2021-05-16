@@ -59,4 +59,5 @@ android {
 }
 
 dependencies {
+    base()
 }

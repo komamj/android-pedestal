@@ -16,7 +16,7 @@
 
 object Versions {
     // tools
-    const val android_build_tools = "4.2.1"
+    const val android_build_tools = "4.1.2"
     const val navigation_safe_args_plugin = "2.3.4"
     const val gradle_versions_plugin = "0.38.0"
     const val spotless = "5.11.0"
@@ -29,7 +29,7 @@ object Versions {
     const val buildTools = "30.0.3"
 
     // kotlin
-    const val kotlin = "1.5.0"
+    const val kotlin = "1.4.21"
     const val coroutines = "1.3.9"
 
     // jetpack

@@ -34,7 +34,7 @@ object Dependencies {
     // lifecycle
     const val lifecycle_runtime =
         "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
-    val lifecycle_common_java8 =
+    const val lifecycle_common_java8 =
         "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycle}"
     const val lifecycle_livedata =
         "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"

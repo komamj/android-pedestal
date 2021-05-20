@@ -16,12 +16,17 @@
 
 package com.komamj.log
 
+import com.komamj.log.util.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 internal class DebugTree : Timber.DebugTree() {
     override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
-        val newTag = produceTag(tag)
-        super.log(priority, newTag, message, t)
+        GlobalScope.launch(Dispatchers.single) {
+            val newTag = produceTag(tag)
+            super.log(priority, newTag, message, t)
+        }
     }
 
     private fun produceTag(originTag: String?): String {

@@ -35,5 +35,6 @@ android {
 
 dependencies {
     implementation(Dependencies.kotlin)
+    coroutines()
     implementation(Dependencies.timber)
 }

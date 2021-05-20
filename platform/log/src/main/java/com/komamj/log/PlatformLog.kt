@@ -21,7 +21,6 @@ import timber.log.Timber
 
 object PlatformLog {
     private lateinit var application: Application
-    private var isDebug = true
 
     @JvmStatic
     fun init(application: Application, isDebug: Boolean = true) {

@@ -37,4 +37,6 @@ dependencies {
     implementation(Dependencies.kotlin)
     coroutines()
     implementation(Dependencies.timber)
+
+    test()
 }

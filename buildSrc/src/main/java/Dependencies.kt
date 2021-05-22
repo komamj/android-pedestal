@@ -74,6 +74,15 @@ object Dependencies {
     //startup
     const val startup = "androidx.startup:startup-runtime:${Versions.startup}"
 
+    // dagger
+    const val hilt_android = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hilt_compiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    const val hilt_android_testing = "com.google.dagger:hilt-android-testing:${Versions.hilt}"
+    const val hilt_navigation_fragment =
+        "androidx.hilt:hilt-navigation-fragment:${Versions.hilt_androidx}"
+    const val hilt_work = "androidx.hilt:hilt-work:${Versions.hilt_androidx}"
+    const val hilt_androidx_compiler = "androidx.hilt:hilt-compiler:${Versions.hilt_androidx}"
+
     // paging
     const val paging = "androidx.paging:paging-runtime:${Versions.paging}"
 
@@ -122,8 +131,31 @@ object Dependencies {
     // lottie
     const val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
 
+    // leakcanary
     const val leakcanary_android =
         "com.squareup.leakcanary:leakcanary-android:${Versions.leakcanary}"
+
+    // test
+    const val junit = "junit:junit:${Versions.junit}"
+    const val test_core = "androidx.test:core:${Versions.test}"
+    const val test_rules = "androidx.test:runner:${Versions.test}"
+    const val test_runner = "androidx.test:runner:${Versions.test}"
+    const val test_junit = "androidx.test.ext:junit:${Versions.test_junit}"
+    const val test_truth = "androidx.test.ext:truth:${Versions.test}"
+    const val google_truth = "com.google.truth:truth:${Versions.truth}"
+    const val espresso_core = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+    const val espresso_contrib = "androidx.test.espresso:espresso-contrib:${Versions.espresso}"
+    const val espresso_intents = "androidx.test.espresso:espresso-intents:${Versions.espresso}"
+    const val espresso_accessibility =
+        "androidx.test.espresso:espresso-accessibility:${Versions.espresso}"
+    const val espresso_web = "androidx.test.espresso:espresso-web:${Versions.espresso}"
+    const val espresso_idling_concurrent =
+        "androidx.test.espresso:idling:idling-concurrent:${Versions.espresso}"
+    const val espresso_idling_resource =
+        "androidx.test.espresso:espresso-idling-resource:${Versions.espresso}"
+    const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
+    const val mockito_core = "org.mockito:mockito-core:${Versions.mockito}"
+    const val mockito_android = "org.mockito:mockito-android:${Versions.mockito}"
 }
 
 fun DependencyHandler.base() {
@@ -152,6 +184,16 @@ fun DependencyHandler.navigation() {
     implementation(Dependencies.navigation_ui)
 }
 
+fun DependencyHandler.dagger() {
+    implementation(Dependencies.hilt_android)
+    implementation(Dependencies.hilt_navigation_fragment)
+    implementation(Dependencies.hilt_work)
+    kapt(Dependencies.hilt_compiler)
+    kapt(Dependencies.hilt_androidx_compiler)
+    testImplementation(Dependencies.hilt_android_testing)
+    androidTestImplementation(Dependencies.hilt_android_testing)
+}
+
 fun DependencyHandler.room() {
     implementation(Dependencies.room_runtime)
     kapt(Dependencies.room_compiler)
@@ -164,6 +206,30 @@ fun DependencyHandler.network() {
     implementation(Dependencies.okhttp)
     implementation(Dependencies.okhttp_logging_interceptor)
     testImplementation(Dependencies.okhttp_logging_interceptor)
+}
+
+fun DependencyHandler.test() {
+    testImplementation(Dependencies.junit)
+    testImplementation(Dependencies.google_truth)
+    testImplementation(Dependencies.robolectric)
+    testImplementation(Dependencies.mockito_core)
+}
+
+fun DependencyHandler.androidTest() {
+    androidTestImplementation(Dependencies.test_core)
+    androidTestImplementation(Dependencies.test_runner)
+    androidTestImplementation(Dependencies.test_rules)
+    androidTestImplementation(Dependencies.test_junit)
+    androidTestImplementation(Dependencies.test_truth)
+    androidTestImplementation(Dependencies.google_truth)
+    androidTestImplementation(Dependencies.espresso_core)
+    androidTestImplementation(Dependencies.espresso_contrib)
+    androidTestImplementation(Dependencies.espresso_intents)
+    androidTestImplementation(Dependencies.espresso_accessibility)
+    androidTestImplementation(Dependencies.espresso_web)
+    androidTestImplementation(Dependencies.espresso_idling_concurrent)
+    androidTestImplementation(Dependencies.espresso_idling_resource)
+    androidTestImplementation(Dependencies.mockito_android)
 }
 
 private fun DependencyHandler.implementation(depName: String) {

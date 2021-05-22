@@ -63,4 +63,6 @@ dependencies {
     base()
 
     implementation(project(":log"))
+
+    debugImplementation(Dependencies.leakcanary_android)
 }

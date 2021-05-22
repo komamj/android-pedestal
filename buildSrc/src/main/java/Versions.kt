@@ -18,7 +18,6 @@ object Versions {
     // tools
     const val android_build_tools = "4.1.2"
     const val navigation_safe_args_plugin = "2.3.4"
-    const val gradle_versions_plugin = "0.38.0"
     const val spotless = "5.11.0"
     const val ktlint = "0.40.0"
 
@@ -52,6 +51,10 @@ object Versions {
     const val datastore = "1.0.0-alpha03"
     const val sqlite = "2.0.1"
 
+    // dagger
+    const val hilt = "2.35.1"
+    const val hilt_androidx = "1.0.0"
+
     // router
     const val arouter_register = "1.0.2"
     const val arouter_api = "1.5.1"
@@ -81,4 +84,13 @@ object Versions {
 
     // leakcanary
     const val leakcanary = "2.7"
+
+    // test
+    const val junit = "4.13.2"
+    const val test = "1.3.0"
+    const val truth = "1.1.2"
+    const val test_junit = "1.1.2"
+    const val espresso = "3.3.0"
+    const val robolectric = "4.5.1"
+    const val mockito = "3.10.0"
 }

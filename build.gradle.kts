@@ -8,6 +8,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
         classpath("com.alibaba:arouter-register:${Versions.arouter_register}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation_safe_args_plugin}")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}")
     }
 }
 

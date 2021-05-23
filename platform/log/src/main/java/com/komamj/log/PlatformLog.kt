@@ -17,17 +17,19 @@
 package com.komamj.log
 
 import android.app.Application
+import com.komamj.log.util.LOG_TAG
 import timber.log.Timber
 
 object PlatformLog {
-    private lateinit var application: Application
+    internal lateinit var application: Application
 
     @JvmStatic
     fun init(application: Application, isDebug: Boolean = true) {
         PlatformLog.application = application
 
+        Timber.tag(LOG_TAG)
         if (isDebug) {
-            Timber.plant(DebugTree())
+            Timber.plant(Timber.DebugTree())
         } else {
             Timber.plant(ReleaseTree())
         }

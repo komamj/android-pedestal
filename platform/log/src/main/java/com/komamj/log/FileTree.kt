@@ -21,8 +21,9 @@ import android.util.PrintWriterPrinter
 import android.util.Printer
 import com.komamj.log.util.Dispatchers
 import com.komamj.log.util.StorageUtils
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 import java.io.File
 import java.io.FileOutputStream
@@ -30,11 +31,13 @@ import java.io.IOException
 import java.io.OutputStreamWriter
 import java.io.PrintWriter
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 import java.util.regex.Pattern
 import kotlin.math.min
 
 internal class FileTree : Timber.Tree() {
+    private val mainScope = MainScope()
+
     private var fileOutputStream: FileOutputStream? = null
     private var outputStream: OutputStreamWriter? = null
     private var printWriter: PrintWriter? = null
@@ -51,8 +54,10 @@ internal class FileTree : Timber.Tree() {
     }
 
     init {
-        GlobalScope.launch(Dispatchers.single) {
-            initFile()
+        mainScope.launch {
+            withContext(Dispatchers.single) {
+                initFile()
+            }
         }
     }
 
@@ -103,40 +108,42 @@ internal class FileTree : Timber.Tree() {
     }
 
     override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
-        GlobalScope.launch(Dispatchers.single) {
-            if (message.length < MAX_LOG_LENGTH) {
-                mLogBuffer.append(LOG_TIME_FORMATTER.format(Date()))
-                    .append(" ")
-                    .append(threadInfo)
-                    .append(" ")
-                    .append(message)
-                mLogPrinter?.println(mLogBuffer.toString())
+        mainScope.launch {
+            withContext(Dispatchers.single) {
+                if (message.length < MAX_LOG_LENGTH) {
+                    mLogBuffer.append(LOG_TIME_FORMATTER.format(Date()))
+                        .append(" ")
+                        .append(threadInfo)
+                        .append(" ")
+                        .append(message)
+                    mLogPrinter?.println(mLogBuffer.toString())
 
-                if (priority == Log.ASSERT) {
-                    Log.wtf(tag, message)
-                } else {
-                    Log.println(priority, tag, message)
-                }
-                return@launch
-            }
-
-            // Split by line, then ensure each line can fit into Log's maximum length.
-            var i = 0
-            val length = message.length
-            while (i < length) {
-                var newline = message.indexOf('\n', i)
-                newline = if (newline != -1) newline else length
-                do {
-                    val end = min(newline, i + MAX_LOG_LENGTH)
-                    val part = message.substring(i, end)
                     if (priority == Log.ASSERT) {
-                        Log.wtf(tag, part)
+                        Log.wtf(tag, message)
                     } else {
-                        Log.println(priority, tag, part)
+                        Log.println(priority, tag, message)
                     }
-                    i = end
-                } while (i < newline)
-                i++
+                    return@withContext
+                }
+
+                // Split by line, then ensure each line can fit into Log's maximum length.
+                var i = 0
+                val length = message.length
+                while (i < length) {
+                    var newline = message.indexOf('\n', i)
+                    newline = if (newline != -1) newline else length
+                    do {
+                        val end = min(newline, i + MAX_LOG_LENGTH)
+                        val part = message.substring(i, end)
+                        if (priority == Log.ASSERT) {
+                            Log.wtf(tag, part)
+                        } else {
+                            Log.println(priority, tag, part)
+                        }
+                        i = end
+                    } while (i < newline)
+                    i++
+                }
             }
         }
     }

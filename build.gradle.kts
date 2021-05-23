@@ -10,10 +10,12 @@ buildscript {
         classpath("com.alibaba:arouter-register:${Versions.arouter_register}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.navigation_safe_args_plugin}")
         classpath("com.google.dagger:hilt-android-gradle-plugin:${Versions.hilt}")
+        classpath("com.github.ben-manes:gradle-versions-plugin:${Versions.gradle_versions_plugin}")
     }
 }
 
 plugins {
+    id("com.github.ben-manes.versions") version Versions.gradle_versions_plugin
     id("com.diffplug.spotless") version Versions.spotless apply false
 }
 
@@ -46,6 +48,25 @@ subprojects {
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         kotlinOptions {
             allWarningsAsErrors = false
+        }
+    }
+}
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
+}
+
+tasks.withType<com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask> {
+    resolutionStrategy {
+        componentSelection {
+            all {
+                if (isNonStable(candidate.version) && !isNonStable(currentVersion)) {
+                    reject("Release candidate")
+                }
+            }
         }
     }
 }

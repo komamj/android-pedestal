@@ -20,6 +20,7 @@ object Versions {
     const val navigation_safe_args_plugin = "2.3.5"
     const val spotless = "5.12.5"
     const val ktlint = "0.40.0"
+    const val gradle_versions_plugin = "0.38.0"
 
     // android configuration
     const val compileSdk = 30

@@ -53,7 +53,6 @@ tasks.register<Exec>("installHooks") {
     commandLine("sh", "scripts/install-hooks.sh")
 }
 
-/*
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
-}*/
+}

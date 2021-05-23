@@ -186,9 +186,12 @@ fun DependencyHandler.navigation() {
 
 fun DependencyHandler.dagger() {
     implementation(Dependencies.hilt_android)
+    kapt(Dependencies.hilt_compiler)
+}
+
+fun DependencyHandler.daggerAndroidX() {
     implementation(Dependencies.hilt_navigation_fragment)
     implementation(Dependencies.hilt_work)
-    kapt(Dependencies.hilt_compiler)
     kapt(Dependencies.hilt_androidx_compiler)
     testImplementation(Dependencies.hilt_android_testing)
     androidTestImplementation(Dependencies.hilt_android_testing)
@@ -203,6 +206,7 @@ fun DependencyHandler.room() {
 fun DependencyHandler.network() {
     implementation(Dependencies.retrofit)
     implementation(Dependencies.retrofit_converter_gson)
+    implementation(Dependencies.gson)
     implementation(Dependencies.okhttp)
     implementation(Dependencies.okhttp_logging_interceptor)
     testImplementation(Dependencies.okhttp_logging_interceptor)

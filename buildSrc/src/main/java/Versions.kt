@@ -47,7 +47,7 @@ object Versions {
     const val room = "2.2.5"
     const val work = "2.4.0"
     const val startup = "1.0.0"
-    const val paging = "3.0.0-alpha10"
+    const val paging = "3.0.0"
     const val datastore = "1.0.0-alpha03"
     const val sqlite = "2.0.1"
 

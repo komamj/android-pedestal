@@ -184,6 +184,11 @@ fun DependencyHandler.navigation() {
     implementation(Dependencies.navigation_ui)
 }
 
+fun DependencyHandler.arouter() {
+    implementation(Dependencies.arouter_api)
+    kapt(Dependencies.arouter_compiler)
+}
+
 fun DependencyHandler.dagger() {
     implementation(Dependencies.hilt_android)
     kapt(Dependencies.hilt_compiler)

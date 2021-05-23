@@ -2,7 +2,19 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("androidx.navigation.safeargs.kotlin")
+    id("dagger.hilt.android.plugin")
+    id("com.alibaba.arouter")
     id("kotlin-parcelize")
+}
+
+kapt {
+    correctErrorTypes = true
+    useBuildCache = true
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.name)
+        arg("AROUTER_GENERATE_DOC", "enable")
+    }
 }
 
 android {
@@ -60,9 +72,10 @@ android {
 }
 
 dependencies {
-    base()
+    dagger()
 
-    implementation(project(":log"))
+    implementation(project(":launcher"))
+    implementation(project(":common"))
 
     debugImplementation(Dependencies.leakcanary_android)
 }

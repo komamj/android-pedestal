@@ -16,11 +16,12 @@
 
 package com.komamj.network.di
 
-import android.app.Application
+import android.content.Context
 import com.komamj.network.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Cache
 import okhttp3.OkHttpClient
@@ -36,8 +37,8 @@ import javax.inject.Singleton
 class NetworkModule {
     @Singleton
     @Provides
-    fun provideCache(application: Application): Cache {
-        return Cache(application.cacheDir, CACHE_SIZE)
+    fun provideCache(@ApplicationContext context: Context): Cache {
+        return Cache(context.cacheDir, CACHE_SIZE)
     }
 
     @Singleton
@@ -45,13 +46,7 @@ class NetworkModule {
     fun provideOkHttpClient(cache: Cache): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(
-                HttpLoggingInterceptor(
-                    logger = object : HttpLoggingInterceptor.Logger {
-                        override fun log(message: String) {
-                            Timber.e(message)
-                        }
-                    }
-                ).apply {
+                HttpLoggingInterceptor { message -> Timber.e(message) }.apply {
                     level = if (BuildConfig.DEBUG) {
                         HttpLoggingInterceptor.Level.BODY
                     } else {

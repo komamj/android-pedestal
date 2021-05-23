@@ -28,6 +28,10 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
+    buildFeatures {
+        dataBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -45,12 +49,36 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.timber)
+    api(Dependencies.kotlin)
+    // coroutines
+    api(Dependencies.coroutines_core)
+    api(Dependencies.coroutines_android)
+    testApi(Dependencies.coroutines_test)
+    // lifecycle
+    api(Dependencies.lifecycle_runtime)
+    api(Dependencies.lifecycle_livedata)
+    api(Dependencies.lifecycle_common_java8)
+    testApi(Dependencies.arch_core_testing)
+
+    api(Dependencies.appcompat)
+    api(Dependencies.constraint_layout)
+    api(Dependencies.material)
+
+    // navigation
+    api(Dependencies.navigation_fragment)
+    api(Dependencies.navigation_ui)
+
     arouter()
     dagger()
     daggerAndroidX()
 
-    implementation(project(":common"))
+    // platform
+    api(project(":network"))
+    api(project(":log"))
 
-    test()
+    // test
+    testApi(Dependencies.junit)
+    testApi(Dependencies.google_truth)
+    testApi(Dependencies.robolectric)
+    testApi(Dependencies.mockito_core)
 }

@@ -16,9 +16,9 @@
 
 object Versions {
     // tools
-    const val android_build_tools = "4.1.2"
-    const val navigation_safe_args_plugin = "2.3.4"
-    const val spotless = "5.11.0"
+    const val android_build_tools = "4.2.1"
+    const val navigation_safe_args_plugin = "2.3.5"
+    const val spotless = "5.12.5"
     const val ktlint = "0.40.0"
 
     // android configuration
@@ -28,23 +28,24 @@ object Versions {
     const val buildTools = "30.0.3"
 
     // kotlin
-    const val kotlin = "1.4.21"
-    const val coroutines = "1.3.9"
+    const val kotlin = "1.5.0"
+    const val coroutines = "1.5.0"
 
     // jetpack
     const val annotation = "1.1.0"
     const val biometric = "1.2.0-alpha01"
     const val multidex = "2.0.1"
-    const val lifecycle = "2.2.0"
+    const val lifecycle = "2.3.1"
     const val arch_core_testing = "2.1.0"
     const val appcompat = "1.2.0"
-    const val fragment = "1.2.5"
-    const val material = "1.2.1"
+    const val activity = "1.2.3"
+    const val fragment = "1.3.3"
+    const val material = "1.3.0"
     const val constraint_layout = "2.0.4"
     const val viewpager2 = "1.0.0"
     const val webkit = "1.3.0"
-    const val navigation = "2.3.1"
-    const val room = "2.2.5"
+    const val navigation = "2.3.5"
+    const val room = "2.3.0"
     const val work = "2.4.0"
     const val startup = "1.0.0"
     const val paging = "3.0.0"
@@ -69,8 +70,8 @@ object Versions {
     // network
     const val retrofit = "2.9.0"
     const val gson = "2.8.6"
-    const val okhttp = "4.7.2"
-    const val okhttp_logging_interceptor = "4.7.2"
+    const val okhttp = "4.9.1"
+    const val okhttp_logging_interceptor = "4.9.1"
     const val okio = "2.9.0"
 
     // lottie

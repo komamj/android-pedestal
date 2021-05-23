@@ -14,14 +14,21 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.common.util
 
-import com.komamj.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import android.view.View
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
+private const val DEFAULT_DEBOUNCE_TIME = 1200
+
+fun View.setDebounceOnClickListener(
+    listener: (View) -> Unit,
+    debounceTime: Int = DEFAULT_DEBOUNCE_TIME
+) {
+    var lastClickTime: Long = 0
+    setOnClickListener {
+        if (System.currentTimeMillis() - lastClickTime >= debounceTime) {
+            listener.invoke(it)
+            lastClickTime = System.currentTimeMillis()
+        }
     }
 }

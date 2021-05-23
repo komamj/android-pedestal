@@ -40,8 +40,14 @@ dependencies {
     coroutines()
     implementation(Dependencies.timber)
 
-    network()
+    api(Dependencies.retrofit)
+    api(Dependencies.gson)
+    implementation(Dependencies.okhttp)
+    implementation(Dependencies.retrofit_converter_gson)
+    implementation(Dependencies.okhttp_logging_interceptor)
+
     dagger()
 
     test()
+    testImplementation(Dependencies.okhttp_logging_interceptor)
 }

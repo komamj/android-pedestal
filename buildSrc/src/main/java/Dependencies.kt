@@ -67,6 +67,7 @@ object Dependencies {
         "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigation_ui =
         "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    const val navigation_testing = "androidx.navigation:navigation-testing:${Versions.navigation}"
 
     // work
     const val work = "androidx.work:work-runtime-ktx:${Versions.work}"
@@ -182,6 +183,7 @@ fun DependencyHandler.lifecycle() {
 fun DependencyHandler.navigation() {
     implementation(Dependencies.navigation_fragment)
     implementation(Dependencies.navigation_ui)
+    androidTestImplementation(Dependencies.navigation_testing)
 }
 
 fun DependencyHandler.arouter() {

@@ -62,6 +62,14 @@ object Dependencies {
     const val room_compiler = "androidx.room:room-compiler:${Versions.room}"
     const val room_testing = "androidx.room:room-testing:${Versions.room}"
 
+    // compose
+    const val compose_ui = "androidx.compose.ui:ui:${Versions.compose}"
+    const val compose_material = "androidx.compose.material:material:${Versions.compose}"
+    const val compose_preview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
+    const val activity_compose = "androidx.activity:activity-compose:${Versions.compose}"
+    const val compose_ui_tooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
+    const val compose_ui_test_junit4 = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
+
     // navigation
     const val navigation_fragment =
         "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
@@ -108,13 +116,13 @@ object Dependencies {
     // timber
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 
-    //glide
+    // glide
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
     const val glide_okhttp_integration =
         "com.github.bumptech.glide:okhttp3-integration:${Versions.glide}"
 
-    //gson
+    // gson
     const val gson = "com.google.code.gson:gson:${Versions.gson}"
 
     // retrofit
@@ -178,6 +186,15 @@ fun DependencyHandler.lifecycle() {
     implementation(Dependencies.lifecycle_livedata)
     implementation(Dependencies.lifecycle_common_java8)
     testImplementation(Dependencies.arch_core_testing)
+}
+
+fun DependencyHandler.compose() {
+    implementation(Dependencies.compose_ui)
+    implementation(Dependencies.compose_material)
+    implementation(Dependencies.compose_preview)
+    implementation(Dependencies.activity_compose)
+    debugImplementation(Dependencies.compose_ui_tooling)
+    androidTestImplementation(Dependencies.compose_ui_test_junit4)
 }
 
 fun DependencyHandler.navigation() {

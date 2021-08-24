@@ -15,16 +15,14 @@ kapt {
 }
 
 android {
-    compileSdkVersion(Versions.compileSdk)
-    buildToolsVersion(Versions.buildTools)
+    compileSdk = Versions.compileSdk
+    buildToolsVersion = Versions.buildTools
 
     defaultConfig {
-        minSdkVersion(Versions.minSdk)
-        targetSdkVersion(Versions.targetSdk)
-        versionCode = 1
-        versionName = "1"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
 
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -37,7 +35,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    lintOptions {
+    lint {
         isAbortOnError = true
         isIgnoreWarnings = true
         lintConfig = rootProject.file("lint.xml")

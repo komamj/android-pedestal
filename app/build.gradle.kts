@@ -54,7 +54,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    lintOptions {
+    lint {
         isAbortOnError = true
         isIgnoreWarnings = true
         lintConfig = rootProject.file("lint.xml")

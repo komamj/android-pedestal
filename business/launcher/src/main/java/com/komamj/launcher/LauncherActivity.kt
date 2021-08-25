@@ -22,8 +22,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.callback.NavCallback
 import com.alibaba.android.arouter.launcher.ARouter
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+@AndroidEntryPoint
 class LauncherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,5 +53,11 @@ class LauncherActivity : AppCompatActivity() {
         super.onNewIntent(intent)
 
         handleIntent(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Timber.d("onResume")
     }
 }

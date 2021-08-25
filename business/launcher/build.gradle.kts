@@ -22,8 +22,14 @@ android {
         minSdk = Versions.minSdk
         targetSdk = Versions.targetSdk
 
+        resourcePrefix("launcher_")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 
     compileOptions {

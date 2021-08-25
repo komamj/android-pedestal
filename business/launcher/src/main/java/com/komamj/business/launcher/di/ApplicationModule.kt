@@ -14,14 +14,18 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.business.launcher.di
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import com.komamj.business.launcher.data.source.LauncherRepository
+import com.komamj.business.launcher.data.source.LauncherRepositoryImpl
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class ApplicationModule {
+    @Binds
+    abstract fun bindLauncherRepository(repository: LauncherRepositoryImpl): LauncherRepository
 }

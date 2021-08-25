@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.business.common.architecture.presentation
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
+open class BaseViewModel : ViewModel() {
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading
+        get() = _isLoading
 }

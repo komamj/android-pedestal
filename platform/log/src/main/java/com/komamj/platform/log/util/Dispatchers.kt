@@ -14,14 +14,17 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.platform.log.util
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.ExecutorCoroutineDispatcher
+import kotlinx.coroutines.asCoroutineDispatcher
+import java.util.concurrent.Executors
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
+object Dispatchers {
+    private const val SINGLE_THREAD_CONTEXT = "SingleThreadContext"
+
+    val single: ExecutorCoroutineDispatcher by lazy {
+        Executors.newSingleThreadExecutor { runnable -> Thread(runnable, SINGLE_THREAD_CONTEXT) }
+            .asCoroutineDispatcher()
     }
 }

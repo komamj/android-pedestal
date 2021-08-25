@@ -14,14 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.platform.log.util
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
-
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+internal const val LOG_TAG = "PlatformLog"
+internal const val SEPARATOR = "----"

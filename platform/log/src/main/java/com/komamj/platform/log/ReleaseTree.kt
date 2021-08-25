@@ -14,14 +14,23 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.platform.log
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import android.util.Log
+import timber.log.Timber
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
+internal class ReleaseTree : Timber.DebugTree() {
+    override fun isLoggable(tag: String?, priority: Int): Boolean {
+        return priority == Log.WARN || priority == Log.INFO || priority == Log.ERROR ||
+            priority == Log.ASSERT
+    }
+
+    override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+        if (priority == Log.VERBOSE || priority == Log.DEBUG) {
+            return
+        }
+
+        if (t != null) {
+        }
     }
 }

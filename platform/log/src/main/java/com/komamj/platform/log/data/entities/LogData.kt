@@ -14,14 +14,8 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.platform.log.data.entities
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import java.util.*
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+data class LogData(val time: Date, val threadInfo: String,)

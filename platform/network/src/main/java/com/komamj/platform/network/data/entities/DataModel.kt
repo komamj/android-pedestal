@@ -14,14 +14,17 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.platform.network.data.entities
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import androidx.annotation.Keep
+import com.google.gson.annotations.SerializedName
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+@Keep
+data class DataModel<T>(
+    @SerializedName("code")
+    val code: Int,
+    @SerializedName("message")
+    val message: String,
+    @SerializedName("data")
+    val data: List<T>?
+)

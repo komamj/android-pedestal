@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.business.launcher
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import com.komamj.business.common.architecture.presentation.BaseViewModel
+import com.komamj.business.launcher.data.source.LauncherRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+@HiltViewModel
+class LauncherViewModel @Inject constructor(private val repository: LauncherRepository) :
+    BaseViewModel()

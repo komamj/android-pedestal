@@ -14,14 +14,6 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.business.launcher.data.source
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
-
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+interface LauncherRepository

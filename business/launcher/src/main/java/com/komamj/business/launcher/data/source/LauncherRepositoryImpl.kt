@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.business.launcher.data.source
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import com.komamj.business.launcher.data.source.local.LocalDataSource
+import com.komamj.business.launcher.data.source.remote.RemoteDataSource
+import javax.inject.Inject
+import javax.inject.Singleton
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+@Singleton
+class LauncherRepositoryImpl @Inject constructor(
+    private val localDataSource: LocalDataSource,
+    private val remoteDataSource: RemoteDataSource
+) : LauncherRepository

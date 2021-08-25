@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package com.komamj.pedestal.demo
+package com.komamj.business.common
 
-import com.komamj.business.common.CommonApplication
-import dagger.hilt.android.HiltAndroidApp
+import android.app.Application
+import com.komamj.platform.log.PlatformLog
 
-@HiltAndroidApp
-class PedestalDemoApplication : CommonApplication() {
+open class CommonApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+
+        PlatformLog.init(application = this)
     }
 }

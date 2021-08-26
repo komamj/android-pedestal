@@ -38,7 +38,8 @@ subprojects {
                     "max_line_length" to "120"
                 )
             )
-            licenseHeaderFile(rootProject.file("copyright.kt"))
+
+            licenseHeaderFile(file("${rootDir.absolutePath}/copyright.kt"))
         }
         kotlinGradle {
             target("**/*.gradle.kts")

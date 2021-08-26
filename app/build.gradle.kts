@@ -18,13 +18,13 @@ kapt {
 }
 
 android {
-    compileSdkVersion(Versions.compileSdk)
-    buildToolsVersion(Versions.buildTools)
+    compileSdk = Versions.compileSdk
+    buildToolsVersion = Versions.buildTools
 
     defaultConfig {
         applicationId = "com.komamj.pedestal.demo"
-        minSdkVersion(Versions.minSdk)
-        targetSdkVersion(Versions.targetSdk)
+        minSdk = Versions.minSdk
+        targetSdk = Versions.targetSdk
         versionCode = 1
         versionName = "1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -54,7 +54,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    lintOptions {
+    lint {
         isAbortOnError = true
         isIgnoreWarnings = true
         lintConfig = rootProject.file("lint.xml")

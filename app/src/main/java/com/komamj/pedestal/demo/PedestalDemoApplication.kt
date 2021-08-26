@@ -16,7 +16,7 @@
 
 package com.komamj.pedestal.demo
 
-import com.komamj.common.CommonApplication
+import com.komamj.business.common.CommonApplication
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp

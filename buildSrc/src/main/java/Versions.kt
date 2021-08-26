@@ -16,20 +16,20 @@
 
 object Versions {
     // tools
-    const val android_build_tools = "4.2.1"
+    const val android_build_tools = "7.0.1"
     const val navigation_safe_args_plugin = "2.3.5"
     const val spotless = "5.12.5"
     const val ktlint = "0.40.0"
     const val gradle_versions_plugin = "0.38.0"
 
     // android configuration
-    const val compileSdk = 30
+    const val compileSdk = 31
     const val minSdk = 21
-    const val targetSdk = 30
-    const val buildTools = "30.0.3"
+    const val targetSdk = 31
+    const val buildTools = "31.0.0"
 
     // kotlin
-    const val kotlin = "1.5.0"
+    const val kotlin = "1.5.21"
     const val coroutines = "1.5.0"
 
     // jetpack
@@ -52,9 +52,11 @@ object Versions {
     const val paging = "3.0.0"
     const val datastore = "1.0.0-alpha03"
     const val sqlite = "2.0.1"
+    const val compose = "1.0.1"
+    const val activity_compose = "1.3.1"
 
     // dagger
-    const val hilt = "2.35.1"
+    const val hilt = "2.37"
     const val hilt_androidx = "1.0.0"
 
     // router

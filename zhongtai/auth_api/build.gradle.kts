@@ -2,7 +2,6 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
-    id("dagger.hilt.android.plugin")
 }
 
 kapt {
@@ -29,10 +28,6 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
-    buildFeatures {
-        dataBinding = true
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -51,12 +46,8 @@ android {
 
 dependencies {
     implementation(Dependencies.timber)
+    implementation(Dependencies.annotation)
     arouter()
-    dagger()
-    daggerAndroidX()
-
-    implementation(project(":auth_api"))
-    implementation(project(":common"))
 
     test()
 }

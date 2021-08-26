@@ -23,6 +23,9 @@ import java.io.BufferedReader
 import java.io.FileReader
 import java.io.IOException
 
+/**
+ * @author komamj
+ */
 object ProcessUtils {
     fun getCurrentProcessName(): String {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {

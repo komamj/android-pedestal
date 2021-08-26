@@ -35,6 +35,9 @@ import java.util.Date
 import java.util.regex.Pattern
 import kotlin.math.min
 
+/**
+ * @author komamj
+ */
 internal class FileTree : Timber.Tree() {
     private val mainScope = MainScope()
 

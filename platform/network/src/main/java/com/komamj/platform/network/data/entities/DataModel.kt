@@ -19,6 +19,9 @@ package com.komamj.platform.network.data.entities
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+/**
+ * @author komamj
+ */
 @Keep
 data class DataModel<T>(
     @SerializedName("code")

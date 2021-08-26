@@ -20,6 +20,9 @@ import android.app.Application
 import com.komamj.platform.log.util.LOG_TAG
 import timber.log.Timber
 
+/**
+ * @author komamj
+ */
 object PlatformLog {
     internal lateinit var application: Application
 

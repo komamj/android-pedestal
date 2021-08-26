@@ -19,6 +19,9 @@ package com.komamj.business.common.architecture.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+/**
+ * @author komamj
+ */
 open class BaseViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading

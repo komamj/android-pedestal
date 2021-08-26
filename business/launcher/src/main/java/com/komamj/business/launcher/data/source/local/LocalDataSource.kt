@@ -18,4 +18,7 @@ package com.komamj.business.launcher.data.source.local
 
 import javax.inject.Inject
 
+/**
+ * @author komamj
+ */
 class LocalDataSource @Inject constructor()

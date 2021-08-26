@@ -20,6 +20,9 @@ import kotlinx.coroutines.ExecutorCoroutineDispatcher
 import kotlinx.coroutines.asCoroutineDispatcher
 import java.util.concurrent.Executors
 
+/**
+ * @author komamj
+ */
 object Dispatchers {
     private const val SINGLE_THREAD_CONTEXT = "SingleThreadContext"
 

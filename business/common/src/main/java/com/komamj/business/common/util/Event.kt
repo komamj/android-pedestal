@@ -19,6 +19,8 @@ package com.komamj.business.common.util
 import androidx.lifecycle.Observer
 
 /**
+ * @author komamj
+ *
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
  */
 open class Event<out T>(private val content: T) {

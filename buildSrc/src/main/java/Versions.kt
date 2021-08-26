@@ -68,7 +68,7 @@ object Versions {
     const val permission = "3.0.0"
 
     // timber
-    const val timber = "4.7.1"
+    const val timber = "5.0.1"
 
     // network
     const val retrofit = "2.9.0"

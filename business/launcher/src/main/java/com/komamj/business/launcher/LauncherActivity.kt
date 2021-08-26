@@ -25,6 +25,9 @@ import com.alibaba.android.arouter.launcher.ARouter
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+/**
+ * @author komamj
+ */
 @AndroidEntryPoint
 class LauncherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

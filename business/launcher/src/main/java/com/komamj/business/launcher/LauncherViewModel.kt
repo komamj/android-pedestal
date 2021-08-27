@@ -21,6 +21,9 @@ import com.komamj.business.launcher.data.source.LauncherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+/**
+ * @author komamj
+ */
 @HiltViewModel
 class LauncherViewModel @Inject constructor(private val repository: LauncherRepository) :
     BaseViewModel()

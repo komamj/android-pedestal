@@ -30,6 +30,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 
 /**
+ * @author komamj
+ *
  * Lifecycle aware connectivity checker that exposes the network connected status via a LiveData.
  *
  * The loss of connectivity while the user scrolls through the feed should NOT be a blocker for the

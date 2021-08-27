@@ -18,6 +18,10 @@ package com.komamj.business.common.util
 
 import android.view.View
 
+/**
+ * @author komamj
+ */
+
 private const val DEFAULT_DEBOUNCE_TIME = 1200
 
 fun View.setDebounceOnClickListener(

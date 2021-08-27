@@ -16,6 +16,9 @@
 
 package com.komamj.business.common.architecture.mapper
 
+/**
+ * @author komamj
+ */
 interface Mapper<From, To> {
     fun map(from: From): To
 }

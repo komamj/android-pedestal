@@ -16,5 +16,8 @@
 
 package com.komamj.platform.log.util
 
+/**
+ * @author komamj
+ */
 internal const val LOG_TAG = "PlatformLog"
 internal const val SEPARATOR = "----"

@@ -19,6 +19,9 @@ package com.komamj.pedestal.demo
 import com.komamj.business.common.CommonApplication
 import dagger.hilt.android.HiltAndroidApp
 
+/**
+ * @author komamj
+ */
 @HiltAndroidApp
 class PedestalDemoApplication : CommonApplication() {
     override fun onCreate() {

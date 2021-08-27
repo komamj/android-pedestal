@@ -19,6 +19,9 @@ package com.komamj.platform.log
 import android.util.Log
 import timber.log.Timber
 
+/**
+ * @author komamj
+ */
 internal class ReleaseTree : Timber.DebugTree() {
     override fun isLoggable(tag: String?, priority: Int): Boolean {
         return priority == Log.WARN || priority == Log.INFO || priority == Log.ERROR ||

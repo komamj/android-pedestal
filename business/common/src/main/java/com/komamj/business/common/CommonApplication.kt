@@ -19,6 +19,9 @@ package com.komamj.business.common
 import android.app.Application
 import com.komamj.platform.log.PlatformLog
 
+/**
+ * @author komamj
+ */
 open class CommonApplication : Application() {
     override fun onCreate() {
         super.onCreate()

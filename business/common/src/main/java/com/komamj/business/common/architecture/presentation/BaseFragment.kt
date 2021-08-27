@@ -25,6 +25,9 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 
+/**
+ * @author komamj
+ */
 abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment() {
     protected lateinit var binding: DB
 
@@ -43,13 +46,16 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this).get(provideViewModelClass())
-        viewModel.isLoading.observe(viewLifecycleOwner, { isLoading ->
-            if (isLoading) {
-                // TODO: 2021/8/25 show loading ui
-            } else {
-                // TODO: 2021/8/25 dismiss loading ui
+        viewModel.isLoading.observe(
+            viewLifecycleOwner,
+            { isLoading ->
+                if (isLoading) {
+                    // TODO: 2021/8/25 show loading ui
+                } else {
+                    // TODO: 2021/8/25 dismiss loading ui
+                }
             }
-        })
+        )
     }
 
     protected abstract fun provideViewModelClass(): Class<VM>

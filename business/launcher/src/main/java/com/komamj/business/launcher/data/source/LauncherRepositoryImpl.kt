@@ -21,6 +21,9 @@ import com.komamj.business.launcher.data.source.remote.RemoteDataSource
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * @author komamj
+ */
 @Singleton
 class LauncherRepositoryImpl @Inject constructor(
     private val localDataSource: LocalDataSource,

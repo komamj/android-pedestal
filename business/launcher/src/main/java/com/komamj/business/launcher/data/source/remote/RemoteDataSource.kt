@@ -18,4 +18,7 @@ package com.komamj.business.launcher.data.source.remote
 
 import javax.inject.Inject
 
+/**
+ * @author komamj
+ */
 class RemoteDataSource @Inject constructor()

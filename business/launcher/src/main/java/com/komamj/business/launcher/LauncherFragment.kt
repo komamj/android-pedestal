@@ -23,6 +23,9 @@ import com.komamj.business.launcher.databinding.LauncherFragmentLauncherBinding
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+/**
+ * @author komamj
+ */
 @AndroidEntryPoint
 class LauncherFragment : BaseFragment<LauncherFragmentLauncherBinding, LauncherViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

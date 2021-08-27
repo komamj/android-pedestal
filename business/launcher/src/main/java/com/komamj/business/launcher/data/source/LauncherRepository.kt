@@ -16,4 +16,7 @@
 
 package com.komamj.business.launcher.data.source
 
+/**
+ * @author komamj
+ */
 interface LauncherRepository

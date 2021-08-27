@@ -18,4 +18,7 @@ package com.komamj.platform.log.data.entities
 
 import java.util.*
 
-data class LogData(val time: Date, val threadInfo: String,)
+/**
+ * @author komamj
+ */
+data class LogData(val time: Date, val threadInfo: String)

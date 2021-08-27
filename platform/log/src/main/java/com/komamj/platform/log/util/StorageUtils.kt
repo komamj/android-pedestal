@@ -21,6 +21,9 @@ import android.os.StatFs
 import com.komamj.platform.log.PlatformLog
 import java.io.File
 
+/**
+ * @author komamj
+ */
 object StorageUtils {
     // Checks if a volume containing external storage is available for read and write.
     fun isExternalStorageWritable(): Boolean {

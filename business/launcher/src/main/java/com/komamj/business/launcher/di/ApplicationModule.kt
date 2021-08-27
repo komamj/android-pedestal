@@ -23,6 +23,9 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
+/**
+ * @author komamj
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class ApplicationModule {

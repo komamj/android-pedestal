@@ -4,6 +4,9 @@
     package="com.komamj.business.launcher">
 
     <application>
+      <activity
+          android:name=".register.RegisterActivity"
+          android:exported="true" />
         <activity
             android:name=".LauncherActivity"
             android:exported="true"

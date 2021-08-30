@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    id("kotlin-android")
 }
 
 kapt {
@@ -53,7 +54,7 @@ dependencies {
     arouter()
     dagger()
     daggerAndroidX()
-
+    rxjava3()
     implementation(project(":common"))
 
     test()

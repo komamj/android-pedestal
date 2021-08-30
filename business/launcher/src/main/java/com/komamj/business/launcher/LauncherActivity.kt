@@ -18,21 +18,37 @@ package com.komamj.business.launcher
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.callback.NavCallback
 import com.alibaba.android.arouter.launcher.ARouter
+import com.komamj.business.common.architecture.presentation.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
 import timber.log.Timber
+import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
-class LauncherActivity : AppCompatActivity() {
+class LauncherActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         Timber.d("onCreate")
-
         handleIntent(intent)
+        setContentView(R.layout.launcher_activity_launcher)
+        navigationTo()
+    }
+
+    private fun navigationTo() {
+        var disposable = Observable.interval(3, TimeUnit.SECONDS)
+            .take(1)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                ARouter.getInstance().build("/launcher/registerActivity")
+                    .navigation(this)
+            }, {
+                Timber.e(it)
+            })
+        addDisposable(disposable)
     }
 
     private fun handleIntent(intent: Intent?) {
@@ -51,13 +67,11 @@ class LauncherActivity : AppCompatActivity() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
-
         handleIntent(intent)
     }
 
     override fun onResume() {
         super.onResume()
-
         Timber.d("onResume")
     }
 }

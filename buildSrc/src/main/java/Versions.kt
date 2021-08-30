@@ -97,4 +97,6 @@ object Versions {
     const val espresso = "3.3.0"
     const val robolectric = "4.5.1"
     const val mockito = "3.10.0"
+    const val rxjava3 = "3.1.0"
+    const val rx_android = "3.0.0"
 }

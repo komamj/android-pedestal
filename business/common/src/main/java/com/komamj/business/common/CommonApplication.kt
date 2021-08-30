@@ -17,6 +17,7 @@
 package com.komamj.business.common
 
 import android.app.Application
+import com.alibaba.android.arouter.launcher.ARouter
 import com.komamj.platform.log.PlatformLog
 
 open class CommonApplication : Application() {
@@ -24,5 +25,6 @@ open class CommonApplication : Application() {
         super.onCreate()
 
         PlatformLog.init(application = this)
+        ARouter.init(this)
     }
 }

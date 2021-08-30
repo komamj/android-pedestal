@@ -165,6 +165,9 @@ object Dependencies {
     const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
     const val mockito_core = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockito_android = "org.mockito:mockito-android:${Versions.mockito}"
+
+    const val rx_android= "io.reactivex.rxjava3:rxandroid:${Versions.rx_android}"
+    const val rxjava3 ="io.reactivex.rxjava3:rxjava:${Versions.rxjava3}"
 }
 
 fun DependencyHandler.base() {
@@ -234,6 +237,11 @@ fun DependencyHandler.network() {
     implementation(Dependencies.okhttp)
     implementation(Dependencies.okhttp_logging_interceptor)
     testImplementation(Dependencies.okhttp_logging_interceptor)
+}
+
+fun DependencyHandler.rxjava3() {
+    implementation(Dependencies.rxjava3)
+    implementation(Dependencies.rx_android)
 }
 
 fun DependencyHandler.test() {

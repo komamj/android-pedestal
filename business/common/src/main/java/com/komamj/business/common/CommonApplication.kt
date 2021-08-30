@@ -17,6 +17,7 @@
 package com.komamj.business.common
 
 import android.app.Application
+import com.alibaba.android.arouter.launcher.ARouter
 import com.komamj.platform.log.PlatformLog
 
 /**
@@ -27,5 +28,14 @@ open class CommonApplication : Application() {
         super.onCreate()
 
         PlatformLog.init(application = this)
+        initRouter()
+    }
+
+    private fun initRouter() {
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog()
+            ARouter.openDebug()
+        }
+        ARouter.init(this)
     }
 }

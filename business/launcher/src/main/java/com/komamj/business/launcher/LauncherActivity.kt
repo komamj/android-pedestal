@@ -32,6 +32,7 @@ import timber.log.Timber
 class LauncherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.launcher_activity_launcher)
 
         Timber.d("onCreate")
 

@@ -16,7 +16,7 @@
 
 object Versions {
     // tools
-    const val android_build_tools = "7.0.1"
+    const val android_build_tools = "7.0.2"
     const val navigation_safe_args_plugin = "2.3.5"
     const val spotless = "5.12.5"
     const val ktlint = "0.40.0"

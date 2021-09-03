@@ -72,6 +72,7 @@ dependencies {
     daggerAndroidX()
 
     // platform
+    api(project(":imageloader"))
     api(project(":network"))
     api(project(":log"))
 

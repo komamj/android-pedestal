@@ -84,7 +84,7 @@ object Versions {
     const val sqlcipher = "4.4.2"
 
     // glide
-    const val glide = "4.9.0"
+    const val glide = "4.12.0"
 
     // leakcanary
     const val leakcanary = "2.7"

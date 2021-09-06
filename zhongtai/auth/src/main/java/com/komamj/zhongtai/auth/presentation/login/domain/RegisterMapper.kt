@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-package com.komamj.business.common.architecture.mapper
+package com.komamj.zhongtai.auth.presentation.login.domain
 
 /**
  * @author komamj
  */
-interface Mapper<From, To> {
-    fun map(from: From): To
-}
+interface RegisterMapper

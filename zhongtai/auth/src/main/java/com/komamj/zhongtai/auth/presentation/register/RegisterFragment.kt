@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.auth.register
+package com.komamj.zhongtai.auth.presentation.register
 
-import com.komamj.business.common.architecture.presentation.BaseViewModel
-import com.komamj.zhongtai.auth.data.source.AuthRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import com.komamj.business.common.architecture.presentation.BaseFragment
+import com.komamj.zhongtai.auth.R
+import com.komamj.zhongtai.auth.databinding.AuthFragementRegisterBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * @author komamj
  */
-@HiltViewModel
-class RegisterViewModel @Inject constructor(private val repository: AuthRepository) :
-    BaseViewModel() {
-    fun register(phoneNumber: String) {
-    }
+@AndroidEntryPoint
+class RegisterFragment : BaseFragment<AuthFragementRegisterBinding, RegisterViewModel>() {
+    override fun provideViewModelClass() = RegisterViewModel::class.java
+
+    override fun provideLayoutId() = R.layout.auth_fragement_register
 }

@@ -29,8 +29,8 @@ object Versions {
     const val buildTools = "31.0.0"
 
     // kotlin
-    const val kotlin = "1.5.21"
-    const val coroutines = "1.5.0"
+    const val kotlin = "1.5.30"
+    const val coroutines = "1.5.2"
 
     // jetpack
     const val annotation = "1.1.0"
@@ -38,7 +38,7 @@ object Versions {
     const val multidex = "2.0.1"
     const val lifecycle = "2.3.1"
     const val arch_core_testing = "2.1.0"
-    const val appcompat = "1.2.0"
+    const val appcompat = "1.3.1"
     const val activity = "1.2.3"
     const val fragment = "1.3.3"
     const val material = "1.3.0"
@@ -56,7 +56,7 @@ object Versions {
     const val activity_compose = "1.3.1"
 
     // dagger
-    const val hilt = "2.37"
+    const val hilt = "2.38.1"
     const val hilt_androidx = "1.0.0"
 
     // router

@@ -14,12 +14,9 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.auth.data.source
-
-import com.komamj.zhongtai.auth.presentation.domain.AuthRepository
-import javax.inject.Inject
+package com.komamj.zhongtai.auth.presentation.register.domain
 
 /**
  * @author komamj
  */
-class AuthRepositoryImpl @Inject constructor() : AuthRepository
+interface LoginMapper

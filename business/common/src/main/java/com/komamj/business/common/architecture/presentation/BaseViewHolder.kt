@@ -14,18 +14,13 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.auth.login
+package com.komamj.business.common.architecture.presentation
 
-import com.komamj.business.common.architecture.presentation.BaseViewModel
-import com.komamj.zhongtai.auth.data.source.AuthRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import androidx.databinding.ViewDataBinding
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * @author komamj
  */
-@HiltViewModel
-class LoginViewModel @Inject constructor(private val repository: AuthRepository) : BaseViewModel() {
-    fun login(userName: String) {
-    }
-}
+open class BaseViewHolder constructor(val binding: ViewDataBinding) :
+    RecyclerView.ViewHolder(binding.root)

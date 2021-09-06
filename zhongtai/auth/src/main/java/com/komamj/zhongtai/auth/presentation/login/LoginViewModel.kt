@@ -14,9 +14,18 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.auth.data.source
+package com.komamj.zhongtai.auth.presentation.login
+
+import com.komamj.business.common.architecture.presentation.BaseViewModel
+import com.komamj.zhongtai.auth.presentation.domain.AuthRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 /**
  * @author komamj
  */
-interface AuthRepository
+@HiltViewModel
+class LoginViewModel @Inject constructor(private val repository: AuthRepository) : BaseViewModel() {
+    fun login(userName: String) {
+    }
+}

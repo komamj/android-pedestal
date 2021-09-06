@@ -16,8 +16,8 @@
 
 package com.komamj.zhongtai.auth.di
 
-import com.komamj.zhongtai.auth.data.source.AuthRepository
 import com.komamj.zhongtai.auth.data.source.AuthRepositoryImpl
+import com.komamj.zhongtai.auth.presentation.domain.AuthRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

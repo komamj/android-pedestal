@@ -14,12 +14,19 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.auth.data.source
+package com.komamj.zhongtai.auth.presentation.login
 
-import com.komamj.zhongtai.auth.presentation.domain.AuthRepository
-import javax.inject.Inject
+import com.komamj.business.common.architecture.presentation.BaseFragment
+import com.komamj.zhongtai.auth.R
+import com.komamj.zhongtai.auth.databinding.AuthFragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * @author komamj
  */
-class AuthRepositoryImpl @Inject constructor() : AuthRepository
+@AndroidEntryPoint
+class LoginFragment : BaseFragment<AuthFragmentLoginBinding, LoginViewModel>() {
+    override fun provideViewModelClass() = LoginViewModel::class.java
+
+    override fun provideLayoutId() = R.layout.auth_fragment_login
+}

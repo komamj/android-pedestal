@@ -14,25 +14,17 @@
  * limitations under the License.
  */
 
-package com.komamj.business.common.util
+@file:Suppress("unused")
 
-import android.view.View
+package com.platform.core.util
 
 /**
  * @author komamj
  */
 
-private const val DEFAULT_DEBOUNCE_TIME = 1200
+fun Any.getClassTag(): String = this.javaClass.name
+fun Any.getClassSimpleTag(): String = this.javaClass.simpleName
 
-fun View.setDebounceOnClickListener(
-    listener: (View) -> Unit,
-    debounceTime: Int = DEFAULT_DEBOUNCE_TIME
-) {
-    var lastClickTime: Long = 0
-    setOnClickListener {
-        if (System.currentTimeMillis() - lastClickTime >= debounceTime) {
-            listener.invoke(it)
-            lastClickTime = System.currentTimeMillis()
-        }
-    }
-}
+@Suppress("NOTHING_TO_INLINE")
+inline fun Any.getMethodTag(): String =
+    getClassTag() + "::" + object : Any() {}.javaClass.enclosingMethod?.name

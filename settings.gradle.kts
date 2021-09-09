@@ -11,6 +11,8 @@ project(":auth").projectDir = file("zhongtai/auth")
 include(":auth_api")
 project(":auth_api").projectDir = file("zhongtai/auth_api")
 // platform 层
+include(":core")
+project(":core").projectDir = file("platform/core")
 include(":log")
 project(":log").projectDir = file("platform/log")
 include(":network")

@@ -1,0 +1,438 @@
+/*
+ * Copyright 2021 komamj
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@file:Suppress("unused")
+
+package com.platform.core.util
+
+import android.annotation.SuppressLint
+import android.graphics.Color
+import android.os.Build
+import android.view.Window
+import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsCompat.Type.InsetsType
+import androidx.core.view.WindowInsetsControllerCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+/**
+ * @author komamj
+ *
+ * Helpers to handle status/navigation bars color and visibility.
+ */
+
+/**
+ * A translucent color for older SDKs where light appearance were not available.
+ * Should be a dark transparent color since system bar are white for these older SDKs.
+ */
+private val translucentSystemBarsColor = Color.parseColor("#80000000")
+
+/**
+ * @see WindowInsetsControllerCompat.isAppearanceLightStatusBars
+ */
+val Window.isLightStatusBars
+    get() = WindowCompat.getInsetsController(
+        this,
+        decorView
+    )?.isAppearanceLightStatusBars == true
+
+/**
+ * @see WindowInsetsControllerCompat.isAppearanceLightNavigationBars
+ */
+val Window.isLightNavigationBars
+    get() = WindowCompat.getInsetsController(
+        this,
+        decorView
+    )?.isAppearanceLightNavigationBars == true
+
+/**
+ * @see Window.isLightStatusBars
+ */
+val FragmentActivity.isLightStatusBars
+    get() = window.isLightStatusBars
+
+/**
+ * @see Window.isLightNavigationBars
+ */
+val FragmentActivity.isLightNavigationBars
+    get() = window.isLightNavigationBars
+
+/**
+ * @see FragmentActivity.isLightStatusBars
+ */
+val Fragment.isLightStatusBars
+    get() = activity?.isLightStatusBars == true
+
+/**
+ * @see FragmentActivity.isLightNavigationBars
+ */
+val Fragment.isLightNavigationBars
+    get() = activity?.isLightNavigationBars == true
+
+/**
+ * @see Window.isLightStatusBars
+ */
+val AppCompatDialogFragment.isLightStatusBars
+    get() = dialog?.window?.isLightStatusBars
+
+/**
+ * @see Window.isLightNavigationBars
+ */
+val AppCompatDialogFragment.isLightNavigationBars
+    get() = dialog?.window?.isLightNavigationBars
+
+/**
+ * @see WindowInsetsControllerCompat.setAppearanceLightStatusBars
+ */
+fun Window.toggleLightStatusBars(light: Boolean? = null) {
+    WindowCompat.getInsetsController(this, decorView)?.let {
+        val l = light ?: !it.isAppearanceLightStatusBars
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            it.isAppearanceLightStatusBars = false
+            statusBarColor = if (l) translucentSystemBarsColor else Color.TRANSPARENT
+        } else
+            it.isAppearanceLightStatusBars = l
+    }
+}
+
+/**
+ * @see WindowInsetsControllerCompat.setAppearanceLightNavigationBars
+ */
+fun Window.toggleLightNavigationBars(light: Boolean? = null) {
+    WindowCompat.getInsetsController(this, decorView)?.let {
+        val l = light ?: !it.isAppearanceLightNavigationBars
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            it.isAppearanceLightNavigationBars = false
+            navigationBarColor = if (l) translucentSystemBarsColor else Color.TRANSPARENT
+        } else
+            it.isAppearanceLightNavigationBars = l
+    }
+}
+
+/**
+ * @see WindowInsetsControllerCompat.hide
+ */
+@SuppressLint("WrongConstant")
+fun Window.hide(@InsetsType vararg types: Int) {
+    types.forEach { WindowCompat.getInsetsController(this, decorView)?.hide(it) }
+}
+
+fun Window.hideStatusBars() {
+    hide(WindowInsetsCompat.Type.statusBars())
+}
+
+fun Window.hideNavigationBars() {
+    hide(WindowInsetsCompat.Type.navigationBars())
+}
+
+fun Window.hideSystemBars() {
+    hide(WindowInsetsCompat.Type.systemBars())
+}
+
+/**
+ * @see WindowInsetsControllerCompat.show
+ */
+@SuppressLint("WrongConstant")
+fun Window.show(@InsetsType vararg types: Int) {
+    types.forEach { WindowCompat.getInsetsController(this, decorView)?.show(it) }
+}
+
+fun Window.showStatusBars() {
+    show(WindowInsetsCompat.Type.statusBars())
+}
+
+fun Window.showNavigationBars() {
+    show(WindowInsetsCompat.Type.navigationBars())
+}
+
+fun Window.showSystemBars() {
+    show(WindowInsetsCompat.Type.systemBars())
+}
+
+/**
+ * @see WindowInsetsControllerCompat.getSystemBarsBehavior
+ * @see WindowInsetsControllerCompat.setSystemBarsBehavior
+ */
+var Window.systemBarsBehavior: Int
+    get() = WindowCompat.getInsetsController(this, decorView)?.systemBarsBehavior
+        ?: WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH
+    set(value) {
+        WindowCompat.getInsetsController(this, decorView)?.systemBarsBehavior = value
+    }
+
+/**
+ * @see Window.toggleLightStatusBars
+ */
+fun FragmentActivity.toggleLightStatusBars(light: Boolean? = null) {
+    window.toggleLightStatusBars(light)
+}
+
+/**
+ * @see Window.toggleLightNavigationBars
+ */
+fun FragmentActivity.toggleLightNavigationBars(light: Boolean? = null) {
+    window.toggleLightNavigationBars(light)
+}
+
+/**
+ * Toggle light status/navigation bars independently.
+ *
+ * @see Window.toggleLightStatusBars
+ * @see Window.toggleLightNavigationBars
+ */
+fun FragmentActivity.toggleLightSystemBars(
+    lightStatus: Boolean? = null,
+    lightNavigation: Boolean? = null,
+) {
+    window.toggleLightStatusBars(lightStatus)
+    window.toggleLightNavigationBars(lightNavigation)
+}
+
+/**
+ * Toggle light status/navigation bars with same value.
+ *
+ * @see Window.toggleLightStatusBars
+ * @see Window.toggleLightNavigationBars
+ */
+fun FragmentActivity.toggleLightSystemBars(light: Boolean? = null) {
+    window.toggleLightStatusBars(light)
+    window.toggleLightNavigationBars(light)
+}
+
+/**
+ * @see Window.hide
+ */
+@SuppressLint("WrongConstant")
+fun FragmentActivity.hide(@InsetsType vararg types: Int) {
+    window.hide(*types)
+}
+
+fun FragmentActivity.hideStatusBars() {
+    hide(WindowInsetsCompat.Type.statusBars())
+}
+
+fun FragmentActivity.hideNavigationBars() {
+    hide(WindowInsetsCompat.Type.navigationBars())
+}
+
+fun FragmentActivity.hideSystemBars() {
+    hide(WindowInsetsCompat.Type.systemBars())
+}
+
+/**
+ * @see Window.show
+ */
+@SuppressLint("WrongConstant")
+fun FragmentActivity.show(@InsetsType vararg types: Int) {
+    window.show(*types)
+}
+
+fun FragmentActivity.showStatusBars() {
+    show(WindowInsetsCompat.Type.statusBars())
+}
+
+fun FragmentActivity.showNavigationBars() {
+    show(WindowInsetsCompat.Type.navigationBars())
+}
+
+fun FragmentActivity.showSystemBars() {
+    show(WindowInsetsCompat.Type.systemBars())
+}
+
+/**
+ * @see WindowInsetsControllerCompat.getSystemBarsBehavior
+ * @see WindowInsetsControllerCompat.setSystemBarsBehavior
+ */
+var FragmentActivity.systemBarsBehavior: Int
+    get() = window.systemBarsBehavior
+    set(value) {
+        window.systemBarsBehavior = value
+    }
+
+/**
+ * @see FragmentActivity.toggleLightStatusBars
+ */
+fun Fragment.toggleLightStatusBars(light: Boolean? = null) {
+    activity?.toggleLightStatusBars(light)
+}
+
+/**
+ * @see FragmentActivity.toggleLightNavigationBars
+ */
+fun Fragment.toggleLightNavigationBars(light: Boolean? = null) {
+    activity?.toggleLightNavigationBars(light)
+}
+
+/**
+ * Toggle light status/navigation bars independently.
+ *
+ * @see FragmentActivity.toggleLightStatusBars
+ * @see FragmentActivity.toggleLightNavigationBars
+ */
+fun Fragment.toggleLightSystemBars(lightStatus: Boolean? = null, lightNavigation: Boolean? = null) {
+    activity?.toggleLightSystemBars(lightStatus, lightNavigation)
+}
+
+/**
+ * Toggle light status/navigation bars with same value.
+ *
+ * @see FragmentActivity.toggleLightStatusBars
+ * @see FragmentActivity.toggleLightNavigationBars
+ */
+fun Fragment.toggleLightSystemBars(light: Boolean? = null) {
+    activity?.toggleLightSystemBars(light)
+}
+
+/**
+ * @see FragmentActivity.hide
+ */
+@SuppressLint("WrongConstant")
+fun Fragment.hide(@InsetsType vararg types: Int) {
+    activity?.hide(*types)
+}
+
+fun Fragment.hideStatusBars() {
+    hide(WindowInsetsCompat.Type.statusBars())
+}
+
+fun Fragment.hideNavigationBars() {
+    hide(WindowInsetsCompat.Type.navigationBars())
+}
+
+fun Fragment.hideSystemBars() {
+    hide(WindowInsetsCompat.Type.systemBars())
+}
+
+/**
+ * @see FragmentActivity.show
+ */
+@SuppressLint("WrongConstant")
+fun Fragment.show(@InsetsType vararg types: Int) {
+    activity?.show(*types)
+}
+
+fun Fragment.showStatusBars() {
+    show(WindowInsetsCompat.Type.statusBars())
+}
+
+fun Fragment.showNavigationBars() {
+    show(WindowInsetsCompat.Type.navigationBars())
+}
+
+fun Fragment.showSystemBars() {
+    show(WindowInsetsCompat.Type.systemBars())
+}
+
+/**
+ * @see WindowInsetsControllerCompat.getSystemBarsBehavior
+ * @see WindowInsetsControllerCompat.setSystemBarsBehavior
+ */
+var Fragment.systemBarsBehavior: Int
+    get() = activity?.systemBarsBehavior ?: WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH
+    set(value) {
+        activity?.systemBarsBehavior = value
+    }
+
+/**
+ * @see Window.toggleLightStatusBars
+ */
+fun AppCompatDialogFragment.toggleLightStatusBars(light: Boolean? = null) {
+    dialog?.window?.toggleLightStatusBars(light)
+}
+
+/**
+ * @see Window.toggleLightNavigationBars
+ */
+fun AppCompatDialogFragment.toggleLightNavigationBars(light: Boolean? = null) {
+    dialog?.window?.toggleLightNavigationBars(light)
+}
+
+/**
+ * Toggle light status/navigation bars independently.
+ *
+ * @see Window.toggleLightStatusBars
+ * @see Window.toggleLightNavigationBars
+ */
+fun AppCompatDialogFragment.toggleLightSystemBars(
+    lightStatus: Boolean? = null,
+    lightNavigation: Boolean? = null,
+) {
+    dialog?.window?.toggleLightStatusBars(lightStatus)
+    dialog?.window?.toggleLightNavigationBars(lightNavigation)
+}
+
+/**
+ * Toggle light status/navigation bars with same value.
+ *
+ * @see Window.toggleLightStatusBars
+ * @see Window.toggleLightNavigationBars
+ */
+fun AppCompatDialogFragment.toggleLightSystemBars(light: Boolean? = null) {
+    dialog?.window?.toggleLightStatusBars(light)
+    dialog?.window?.toggleLightNavigationBars(light)
+}
+
+/**
+ * @see Window.hide
+ */
+@SuppressLint("WrongConstant")
+fun AppCompatDialogFragment.hide(@InsetsType vararg types: Int) {
+    dialog?.window?.hide(*types)
+}
+
+fun AppCompatDialogFragment.hideStatusBars() {
+    hide(WindowInsetsCompat.Type.statusBars())
+}
+
+fun AppCompatDialogFragment.hideNavigationBars() {
+    hide(WindowInsetsCompat.Type.navigationBars())
+}
+
+fun AppCompatDialogFragment.hideSystemBars() {
+    hide(WindowInsetsCompat.Type.systemBars())
+}
+
+/**
+ * @see Window.show
+ */
+@SuppressLint("WrongConstant")
+fun AppCompatDialogFragment.show(@InsetsType vararg types: Int) {
+    dialog?.window?.show(*types)
+}
+
+fun AppCompatDialogFragment.showStatusBars() {
+    show(WindowInsetsCompat.Type.statusBars())
+}
+
+fun AppCompatDialogFragment.showNavigationBars() {
+    show(WindowInsetsCompat.Type.navigationBars())
+}
+
+fun AppCompatDialogFragment.showSystemBars() {
+    show(WindowInsetsCompat.Type.systemBars())
+}
+
+/**
+ * @see WindowInsetsControllerCompat.getSystemBarsBehavior
+ * @see WindowInsetsControllerCompat.setSystemBarsBehavior
+ */
+var AppCompatDialogFragment.systemBarsBehavior: Int
+    get() = dialog?.window?.systemBarsBehavior
+        ?: WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH
+    set(value) {
+        dialog?.window?.systemBarsBehavior = value
+    }

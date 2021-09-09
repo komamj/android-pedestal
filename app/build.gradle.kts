@@ -30,17 +30,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        create("release") {
-        }
-    }
-
-    buildTypes {
-        getByName("debug") {
-            isMinifyEnabled = false
-        }
-    }
-
     buildFeatures {
         dataBinding = true
     }
@@ -58,6 +47,34 @@ android {
         isAbortOnError = true
         isIgnoreWarnings = true
         lintConfig = rootProject.file("lint.xml")
+    }
+
+    signingConfigs {
+        create("release") {
+            keyAlias = "komamj"
+            keyPassword = "komamj"
+            storeFile = file("keystore.jks")
+            storePassword = "komamj"
+        }
+    }
+
+    buildTypes {
+        getByName("debug") {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+
+        getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.getByName("release")
+        }
     }
 
     applicationVariants.all {

@@ -22,10 +22,14 @@ import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.platform.core.CoreApplication
 
 /**
  * @author komamj
  */
+fun hasPermission(permission: String) = ContextCompat.checkSelfPermission(
+    CoreApplication.appContext, permission
+) == PackageManager.PERMISSION_GRANTED
 
 fun Activity.hasPermission(permission: String) = ContextCompat.checkSelfPermission(
     this,

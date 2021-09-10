@@ -76,6 +76,7 @@ dependencies {
     api(project(":imageloader"))
     api(project(":network"))
     api(project(":log"))
+    api(project(":core"))
 
     // test
     testApi(Dependencies.junit)

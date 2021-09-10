@@ -16,18 +16,18 @@
 
 package com.komamj.business.common
 
-import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
 import com.komamj.platform.log.PlatformLog
+import com.platform.core.CoreApplication
 
 /**
  * @author komamj
  */
-open class CommonApplication : Application() {
+open class CommonApplication : CoreApplication() {
     override fun onCreate() {
         super.onCreate()
-
-        PlatformLog.init(application = this)
+        PlatformLog.init(application = this, BuildConfig.DEBUG)
+        PlatformLog.d("onCreate")
         initRouter()
     }
 

@@ -32,10 +32,9 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.kotlin)
-    coroutines()
+    implementation(Dependencies.timber)
 
-    api(Dependencies.timber)
+    implementation(project(":core"))
 
     test()
 }

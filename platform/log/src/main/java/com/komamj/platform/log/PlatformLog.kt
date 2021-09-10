@@ -38,11 +38,129 @@ object PlatformLog {
         }
     }
 
-    inline fun d(message: () -> String) {
-        Timber.d(message.invoke())
+    /** Log a verbose message with optional format args. */
+    @JvmStatic
+    fun v(message: String?, vararg args: Any?) {
+        Timber.v(message, args)
     }
 
-    inline fun e(throwable: Throwable, message: () -> String) {
-        Timber.e(throwable, message.invoke())
+    /** Log a verbose exception and a message with optional format args. */
+    @JvmStatic
+    fun v(t: Throwable?, message: String?, vararg args: Any?) {
+        Timber.v(t, message, args)
+    }
+
+    /** Log a verbose exception. */
+    @JvmStatic
+    fun v(t: Throwable?) {
+        Timber.v(t)
+    }
+
+    /** Log a debug message with optional format args. */
+    @JvmStatic
+    fun d(message: String?, vararg args: Any?) {
+        Timber.d(message, args)
+    }
+
+    /** Log a debug exception and a message with optional format args. */
+    @JvmStatic
+    fun d(t: Throwable?, message: String?, vararg args: Any?) {
+        Timber.d(t, message, args)
+    }
+
+    /** Log a debug exception. */
+    @JvmStatic
+    fun d(t: Throwable?) {
+        Timber.d(t)
+    }
+
+    /** Log an info message with optional format args. */
+    @JvmStatic
+    fun i(message: String?, vararg args: Any?) {
+        Timber.i(message, args)
+    }
+
+    /** Log an info exception and a message with optional format args. */
+    @JvmStatic
+    fun i(t: Throwable?, message: String?, vararg args: Any?) {
+        Timber.i(t, message, args)
+    }
+
+    /** Log an info exception. */
+    @JvmStatic
+    fun i(t: Throwable?) {
+        Timber.i(t)
+    }
+
+    /** Log a warning message with optional format args. */
+    @JvmStatic
+    fun w(message: String?, vararg args: Any?) {
+        Timber.w(message, args)
+    }
+
+    /** Log a warning exception and a message with optional format args. */
+    @JvmStatic
+    fun w(t: Throwable?, message: String?, vararg args: Any?) {
+        Timber.w(t, message, args)
+    }
+
+    /** Log a warning exception. */
+    @JvmStatic
+    fun w(t: Throwable?) {
+        Timber.w(t)
+    }
+
+    /** Log an error message with optional format args. */
+    @JvmStatic
+    fun e(message: String?, vararg args: Any?) {
+        Timber.e(message, args)
+    }
+
+    /** Log an error exception and a message with optional format args. */
+    @JvmStatic
+    fun e(t: Throwable?, message: String?, vararg args: Any?) {
+        Timber.e(t, message, args)
+    }
+
+    /** Log an error exception. */
+    @JvmStatic
+    fun e(t: Throwable?) {
+        Timber.e(t)
+    }
+
+    /** Log an assert message with optional format args. */
+    @JvmStatic
+    fun wtf(message: String?, vararg args: Any?) {
+        Timber.wtf(message, args)
+    }
+
+    /** Log an assert exception and a message with optional format args. */
+    @JvmStatic
+    fun wtf(t: Throwable?, message: String?, vararg args: Any?) {
+        Timber.wtf(t, message, args)
+    }
+
+    /** Log an assert exception. */
+    @JvmStatic
+    fun wtf(t: Throwable?) {
+        Timber.wtf(t)
+    }
+
+    /** Log at `priority` a message with optional format args. */
+    @JvmStatic
+    fun log(priority: Int, message: String?, vararg args: Any?) {
+        Timber.log(priority, message, args)
+    }
+
+    /** Log at `priority` an exception and a message with optional format args. */
+    @JvmStatic
+    fun log(priority: Int, t: Throwable?, message: String?, vararg args: Any?) {
+        Timber.log(priority, t, message, args)
+    }
+
+    /** Log at `priority` an exception. */
+    @JvmStatic
+    fun log(priority: Int, t: Throwable?) {
+        Timber.log(priority, t)
     }
 }

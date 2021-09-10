@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.business.common.architecture.presentation
+package com.komamj.business.common.presentation
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil

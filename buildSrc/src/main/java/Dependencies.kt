@@ -49,6 +49,7 @@ object Dependencies {
     const val arch_core_testing = "androidx.arch.core:core-testing:${Versions.arch_core_testing}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
+    const val activity = "androidx.activity:activity-ktx:${Versions.activity}"
     const val constraint_layout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}"
     const val material = "com.google.android.material:material:${Versions.material}"

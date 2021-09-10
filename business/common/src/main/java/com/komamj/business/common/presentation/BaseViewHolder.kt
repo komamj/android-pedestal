@@ -14,27 +14,13 @@
  * limitations under the License.
  */
 
-package com.komamj.business.common.architecture.presentation
+package com.komamj.business.common.presentation
 
-import android.os.Bundle
-import androidx.annotation.LayoutRes
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * @author komamj
  */
-abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
-    protected lateinit var binding: T
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = DataBindingUtil.setContentView(this, provideLayoutId())
-        binding.lifecycleOwner = this
-    }
-
-    @LayoutRes
-    abstract fun provideLayoutId(): Int
-}
+open class BaseViewHolder constructor(val binding: ViewDataBinding) :
+    RecyclerView.ViewHolder(binding.root)

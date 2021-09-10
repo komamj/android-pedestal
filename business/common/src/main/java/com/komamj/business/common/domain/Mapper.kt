@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 
-package com.komamj.business.common.architecture.presentation
-
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+package com.komamj.business.common.domain
 
 /**
  * @author komamj
  */
-open class BaseViewModel : ViewModel() {
-    private val _isLoading = MutableLiveData<Boolean>()
-    val isLoading
-        get() = _isLoading
+interface Mapper<From, To> {
+    fun map(from: From): To
 }

@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
-package com.komamj.business.common.architecture.presentation
+package com.komamj.business.common.presentation
 
-import androidx.databinding.ViewDataBinding
-import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 /**
  * @author komamj
  */
-open class BaseViewHolder constructor(val binding: ViewDataBinding) :
-    RecyclerView.ViewHolder(binding.root)
+open class BaseViewModel : ViewModel() {
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading
+        get() = _isLoading
+}

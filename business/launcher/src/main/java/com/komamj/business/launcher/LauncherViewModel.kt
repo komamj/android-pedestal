@@ -16,7 +16,7 @@
 
 package com.komamj.business.launcher
 
-import com.komamj.business.common.architecture.presentation.BaseViewModel
+import com.komamj.business.common.presentation.BaseViewModel
 import com.komamj.business.launcher.data.source.LauncherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

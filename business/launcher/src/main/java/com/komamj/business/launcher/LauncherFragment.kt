@@ -18,7 +18,7 @@ package com.komamj.business.launcher
 
 import android.os.Bundle
 import android.view.View
-import com.komamj.business.common.architecture.presentation.BaseFragment
+import com.komamj.business.common.presentation.BaseFragment
 import com.komamj.business.launcher.databinding.LauncherFragmentLauncherBinding
 import com.komamj.platform.log.PlatformLog
 import dagger.hilt.android.AndroidEntryPoint

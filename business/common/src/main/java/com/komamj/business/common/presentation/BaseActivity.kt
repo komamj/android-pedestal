@@ -14,18 +14,27 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.auth.presentation.login
+package com.komamj.business.common.presentation
 
-import com.komamj.business.common.presentation.BaseViewModel
-import com.komamj.zhongtai.auth.presentation.domain.AuthRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import android.os.Bundle
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 
 /**
  * @author komamj
  */
-@HiltViewModel
-class LoginViewModel @Inject constructor(private val repository: AuthRepository) : BaseViewModel() {
-    fun login(userName: String) {
+abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
+    protected lateinit var binding: T
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = DataBindingUtil.setContentView(this, provideLayoutId())
+        binding.lifecycleOwner = this
     }
+
+    @LayoutRes
+    abstract fun provideLayoutId(): Int
 }

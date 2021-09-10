@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.platform.core.util
+package com.komamj.platform.core.util
 
 import androidx.lifecycle.Observer
 

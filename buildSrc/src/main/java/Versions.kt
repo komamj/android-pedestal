@@ -18,9 +18,9 @@ object Versions {
     // tools
     const val android_build_tools = "7.0.2"
     const val navigation_safe_args_plugin = "2.3.5"
-    const val spotless = "5.12.5"
+    const val spotless = "5.14.3"
     const val ktlint = "0.40.0"
-    const val gradle_versions_plugin = "0.38.0"
+    const val gradle_versions_plugin = "0.39.0"
 
     // android configuration
     const val compileSdk = 31
@@ -39,10 +39,10 @@ object Versions {
     const val lifecycle = "2.3.1"
     const val arch_core_testing = "2.1.0"
     const val appcompat = "1.3.1"
-    const val activity = "1.2.3"
-    const val fragment = "1.3.3"
-    const val material = "1.3.0"
-    const val constraint_layout = "2.0.4"
+    const val activity = "1.3.1"
+    const val fragment = "1.3.6"
+    const val material = "1.4.0"
+    const val constraint_layout = "2.1.0"
     const val viewpager2 = "1.0.0"
     const val webkit = "1.3.0"
     const val navigation = "2.3.5"
@@ -96,5 +96,5 @@ object Versions {
     const val test_junit = "1.1.2"
     const val espresso = "3.3.0"
     const val robolectric = "4.5.1"
-    const val mockito = "3.10.0"
+    const val mockito = "3.12.4"
 }

@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-package com.platform.core
+package com.komamj.platform.core
 
-import org.junit.Assert.*
-import org.junit.Test
+import android.app.Application
+import android.content.Context
 
 /**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
+ * @author komamj
  */
-class ExampleUnitTest {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+open class CoreApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+
+        appContext = this
+    }
+
+    companion object {
+        @JvmStatic
+        lateinit var appContext: Context
     }
 }

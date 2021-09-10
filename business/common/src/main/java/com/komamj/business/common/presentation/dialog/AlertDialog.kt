@@ -16,7 +16,7 @@
 
 @file:Suppress("MemberVisibilityCanBePrivate", "unused")
 
-package com.komamj.business.common.presentation
+package com.komamj.business.common.presentation.dialog
 
 import android.app.Dialog
 import android.content.DialogInterface

@@ -16,13 +16,13 @@
 
 @file:Suppress("unused")
 
-package com.platform.core.util
+package com.komamj.platform.core.util
 
 import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.platform.core.CoreApplication
+import com.komamj.platform.core.CoreApplication
 
 /**
  * @author komamj

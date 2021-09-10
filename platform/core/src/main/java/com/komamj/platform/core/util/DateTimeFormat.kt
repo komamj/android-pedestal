@@ -16,10 +16,10 @@
 
 @file:Suppress("unused")
 
-package com.platform.core.util
+package com.komamj.platform.core.util
 
 import android.text.format.DateFormat
-import com.platform.core.CoreApplication
+import com.komamj.platform.core.CoreApplication
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.roundToLong

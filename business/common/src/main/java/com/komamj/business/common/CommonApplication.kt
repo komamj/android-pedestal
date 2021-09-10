@@ -17,8 +17,8 @@
 package com.komamj.business.common
 
 import com.alibaba.android.arouter.launcher.ARouter
+import com.komamj.platform.core.CoreApplication
 import com.komamj.platform.log.PlatformLog
-import com.platform.core.CoreApplication
 
 /**
  * @author komamj

@@ -2,5 +2,6 @@
 <resources>
     <dimen name="common_dp_1">1dp</dimen>
     <dimen name="common_dp_8">8dp</dimen>
+    <dimen name="common_dp_10">10dp</dimen>
     <dimen name="common_dp_16">16dp</dimen>
 </resources>

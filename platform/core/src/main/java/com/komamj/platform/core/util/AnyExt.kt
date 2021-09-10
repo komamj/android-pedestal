@@ -14,23 +14,17 @@
  * limitations under the License.
  */
 
-package com.platform.core
+@file:Suppress("unused")
 
-import android.app.Application
-import android.content.Context
+package com.komamj.platform.core.util
 
 /**
  * @author komamj
  */
-open class CoreApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
 
-        appContext = this
-    }
+fun Any.getClassTag(): String = this.javaClass.name
+fun Any.getClassSimpleTag(): String = this.javaClass.simpleName
 
-    companion object {
-        @JvmStatic
-        lateinit var appContext: Context
-    }
-}
+@Suppress("NOTHING_TO_INLINE")
+inline fun Any.getMethodTag(): String =
+    getClassTag() + "::" + object : Any() {}.javaClass.enclosingMethod?.name

@@ -16,7 +16,7 @@
 
 @file:Suppress("unused")
 
-package com.platform.core.util
+package com.komamj.platform.core.util
 
 import android.annotation.SuppressLint
 import android.graphics.Color

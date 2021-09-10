@@ -16,15 +16,14 @@
 
 @file:Suppress("unused")
 
-package com.platform.core.util
+package com.komamj.business.common.util
 
-/**
- * @author komamj
- */
+import com.komamj.business.common.R
+import com.komamj.platform.core.CoreApplication
 
-fun Any.getClassTag(): String = this.javaClass.name
-fun Any.getClassSimpleTag(): String = this.javaClass.simpleName
-
-@Suppress("NOTHING_TO_INLINE")
-inline fun Any.getMethodTag(): String =
-    getClassTag() + "::" + object : Any() {}.javaClass.enclosingMethod?.name
+// Transition
+val TRANSITION_DURATION =
+    CoreApplication.appContext.resources.getInteger(R.integer.common_transition_duration).toLong()
+val TRANSITION_DURATION_SHORT =
+    CoreApplication.appContext.resources.getInteger(R.integer.common_transition_duration_short)
+        .toLong()

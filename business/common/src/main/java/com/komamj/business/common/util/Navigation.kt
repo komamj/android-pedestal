@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.platform.core.util
+package com.komamj.business.common.util
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -23,8 +23,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.findNavController
-import com.komamj.business.common.presentation.AlertDialog
-import com.komamj.business.common.presentation.setDialogPositiveClickListener
+import com.komamj.business.common.presentation.dialog.AlertDialog
+import com.komamj.business.common.presentation.dialog.setDialogPositiveClickListener
 
 /**
  * Make sure we are in the right destination before navigating to other destination.

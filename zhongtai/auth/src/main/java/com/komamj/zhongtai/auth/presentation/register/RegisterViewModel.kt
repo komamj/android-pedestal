@@ -16,7 +16,7 @@
 
 package com.komamj.zhongtai.auth.presentation.register
 
-import com.komamj.business.common.architecture.presentation.BaseViewModel
+import com.komamj.business.common.presentation.BaseViewModel
 import com.komamj.zhongtai.auth.presentation.domain.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

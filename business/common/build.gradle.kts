@@ -48,11 +48,6 @@ android {
 }
 
 dependencies {
-    api(Dependencies.kotlin)
-    // coroutines
-    api(Dependencies.coroutines_core)
-    api(Dependencies.coroutines_android)
-    testApi(Dependencies.coroutines_test)
     // lifecycle
     api(Dependencies.lifecycle_runtime)
     api(Dependencies.lifecycle_livedata)
@@ -60,6 +55,8 @@ dependencies {
     testApi(Dependencies.arch_core_testing)
 
     api(Dependencies.appcompat)
+    api(Dependencies.activity)
+    api(Dependencies.fragment)
     api(Dependencies.material)
     api(Dependencies.constraint_layout)
     api(Dependencies.viewpager2)

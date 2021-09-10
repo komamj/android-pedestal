@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.business.common.architecture.presentation
+package com.komamj.business.common.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

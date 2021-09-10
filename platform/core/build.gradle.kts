@@ -38,8 +38,6 @@ dependencies {
     api(Dependencies.coroutines_core)
     api(Dependencies.coroutines_android)
 
-    api(Dependencies.timber)
-
     testApi(Dependencies.junit)
     testApi(Dependencies.google_truth)
     testApi(Dependencies.robolectric)

@@ -16,7 +16,7 @@
 
 package com.komamj.zhongtai.auth.presentation.register
 
-import com.komamj.business.common.architecture.presentation.BaseFragment
+import com.komamj.business.common.presentation.BaseFragment
 import com.komamj.zhongtai.auth.R
 import com.komamj.zhongtai.auth.databinding.AuthFragementRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint

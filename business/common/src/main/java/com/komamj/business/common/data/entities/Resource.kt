@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.business.common.architecture.data.entities
+package com.komamj.business.common.data.entities
 
 /**
  * @author komamj

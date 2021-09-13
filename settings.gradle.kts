@@ -10,6 +10,8 @@ include(":auth")
 project(":auth").projectDir = file("zhongtai/auth")
 include(":auth_api")
 project(":auth_api").projectDir = file("zhongtai/auth_api")
+include(":imagepicker")
+project(":imagepicker").projectDir = file("zhongtai/imagepicker")
 // platform 层
 include(":core")
 project(":core").projectDir = file("platform/core")

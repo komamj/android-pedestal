@@ -22,8 +22,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.callback.NavCallback
 import com.alibaba.android.arouter.launcher.ARouter
+import com.komamj.platform.log.PlatformLog
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 /**
  * @author komamj
@@ -34,7 +34,7 @@ class LauncherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.launcher_activity_launcher)
 
-        Timber.d("onCreate")
+        PlatformLog.d("onCreate")
 
         handleIntent(intent)
     }
@@ -62,6 +62,6 @@ class LauncherActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        Timber.d("onResume")
+        PlatformLog.d("onResume")
     }
 }

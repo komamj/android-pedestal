@@ -34,10 +34,6 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.kotlin)
-    coroutines()
-    implementation(Dependencies.timber)
-
     api(Dependencies.retrofit)
     api(Dependencies.gson)
     implementation(Dependencies.okhttp)
@@ -46,6 +42,8 @@ dependencies {
 
     dagger()
 
-    test()
+    implementation(project(":log"))
+    implementation(project(":core"))
+
     testImplementation(Dependencies.okhttp_logging_interceptor)
 }

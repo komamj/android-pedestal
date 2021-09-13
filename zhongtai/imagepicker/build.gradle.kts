@@ -54,6 +54,5 @@ dependencies {
     dagger()
     daggerAndroidX()
 
-    implementation(project(":auth_api"))
     implementation(project(":common"))
 }

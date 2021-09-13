@@ -49,7 +49,6 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.timber)
     arouter()
     dagger()
     daggerAndroidX()

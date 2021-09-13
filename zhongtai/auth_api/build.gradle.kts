@@ -45,7 +45,6 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.timber)
     implementation(Dependencies.annotation)
     arouter()
 

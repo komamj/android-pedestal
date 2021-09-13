@@ -17,6 +17,7 @@
 package com.komamj.platform.network.di
 
 import android.content.Context
+import com.komamj.platform.log.PlatformLog
 import com.komamj.platform.network.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -28,7 +29,6 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import timber.log.Timber
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -49,7 +49,7 @@ class NetworkModule {
     fun provideOkHttpClient(cache: Cache): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(
-                HttpLoggingInterceptor { message -> Timber.e(message) }.apply {
+                HttpLoggingInterceptor { message -> PlatformLog.d(message) }.apply {
                     level = if (BuildConfig.DEBUG) {
                         HttpLoggingInterceptor.Level.BODY
                     } else {

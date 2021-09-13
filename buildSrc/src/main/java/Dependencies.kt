@@ -58,6 +58,13 @@ object Dependencies {
     // webkit
     const val webkit = "androidx.webkit:webkit:${Versions.webkit}"
 
+    // camerax
+    const val camerax_core = "androidx.camera:camera-core:${Versions.camerax}"
+    const val camerax_camera2 = "androidx.camera:camera-camera2:${Versions.camerax}"
+    const val camerax_lifecycle = "androidx.camera:camera-lifecycle:${Versions.camerax}"
+    const val camerax_view = "androidx.camera:camera-view:${Versions.camerax}"
+    const val camerax_extensions = "androidx.camera:camera-extensions:${Versions.camerax}"
+
     // room
     const val room_runtime = "androidx.room:room-runtime:${Versions.room}"
     const val room_compiler = "androidx.room:room-compiler:${Versions.room}"
@@ -96,8 +103,12 @@ object Dependencies {
     // paging
     const val paging = "androidx.paging:paging-runtime:${Versions.paging}"
 
+    const val browser = "androidx.browser:browser:${Versions.browser}"
+
     // datastore
     const val datastore =
+        "androidx.datastore:datastore-preferences:${Versions.datastore}"
+    const val datastore_preferences =
         "androidx.datastore:datastore-preferences:${Versions.datastore}"
 
     // sqlite
@@ -235,6 +246,13 @@ fun DependencyHandler.network() {
     implementation(Dependencies.okhttp)
     implementation(Dependencies.okhttp_logging_interceptor)
     testImplementation(Dependencies.okhttp_logging_interceptor)
+}
+
+fun DependencyHandler.camerax() {
+    implementation(Dependencies.camerax_camera2)
+    implementation(Dependencies.camerax_lifecycle)
+    implementation(Dependencies.camerax_view)
+    implementation(Dependencies.camerax_extensions)
 }
 
 fun DependencyHandler.test() {

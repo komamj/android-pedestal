@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3296875" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3296875" />
+        <entry key="app/src/main/res/xml/a.xml" value="0.17129162462159436" />
         <entry key="business/common/src/main/res/layout/common_dialog_loader.xml" value="0.335" />
         <entry key="business/launcher/src/main/res/drawable/launcher_bg_window.xml" value="0.3296875" />
         <entry key="business/launcher/src/main/res/layout/launcher_fragment_launcher.xml" value="0.14984863773965693" />

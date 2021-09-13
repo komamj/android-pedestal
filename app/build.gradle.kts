@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -68,10 +70,12 @@ android {
 
     signingConfigs {
         create("release") {
-            keyAlias = "komamj"
-            keyPassword = "komamj"
-            storeFile = file("keystore.jks")
-            storePassword = "komamj"
+            gradleLocalProperties(rootDir).let {
+                keyAlias = it.getProperty("keyAlias")
+                keyPassword = it.getProperty("keyPassword")
+                storeFile = file(it.getProperty("storeFile"))
+                storePassword = it.getProperty("storePassword")
+            }
         }
     }
 
@@ -92,6 +96,10 @@ android {
             )
             signingConfig = signingConfigs.getByName("release")
         }
+    }
+
+    hilt {
+        enableTransformForLocalTests = true
     }
 
     applicationVariants.all {

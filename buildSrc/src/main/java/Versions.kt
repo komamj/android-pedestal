@@ -91,6 +91,12 @@ object Versions {
     // glide
     const val glide = "4.12.0"
 
+    // 友盟
+    const val um_common = "9.4.2"
+    const val um_asms = "1.4.0"
+    const val um_apm = "1.2.0"
+    const val um_abtest = "1.0.0"
+
     // leakcanary
     const val leakcanary = "2.7"
 

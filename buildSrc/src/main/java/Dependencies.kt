@@ -1,5 +1,3 @@
-import org.gradle.api.artifacts.dsl.DependencyHandler
-
 /*
  * Copyright 2021 komamj
  *
@@ -16,6 +14,11 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
  * limitations under the License.
  */
 
+import org.gradle.api.artifacts.dsl.DependencyHandler
+
+/**
+ * @author komamj
+ */
 object Dependencies {
     // kotlin
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"

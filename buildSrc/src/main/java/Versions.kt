@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+/**
+ * @author komamj
+ */
 object Versions {
     // tools
     const val android_build_tools = "7.0.2"

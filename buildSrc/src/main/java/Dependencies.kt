@@ -128,6 +128,12 @@ object Dependencies {
     const val arouter_compiler =
         "com.alibaba:arouter-compiler:${Versions.arouter_compiler}"
 
+    // 友盟
+    const val um_common = "com.umeng.umsdk:common:${Versions.um_common}"
+    const val um_asms = "com.umeng.umsdk:asms:${Versions.um_asms}"
+    const val um_apm = "com.umeng.umsdk:apm:${Versions.um_apm}"
+    const val um_abtest = "com.umeng.umsdk:abtest:${Versions.um_abtest}"
+
     // timber
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 

@@ -18,14 +18,14 @@ package com.komamj.zhongtai.auth.presentation.register
 
 import com.komamj.business.common.presentation.BaseFragment
 import com.komamj.zhongtai.auth.R
-import com.komamj.zhongtai.auth.databinding.AuthFragementRegisterBinding
+import com.komamj.zhongtai.auth.databinding.AuthFragmentRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * @author komamj
  */
 @AndroidEntryPoint
-class RegisterFragment : BaseFragment<AuthFragementRegisterBinding, RegisterViewModel>() {
+class RegisterFragment : BaseFragment<AuthFragmentRegisterBinding, RegisterViewModel>() {
     override fun provideViewModelClass() = RegisterViewModel::class.java
 
     override fun provideLayoutId() = R.layout.auth_fragment_register

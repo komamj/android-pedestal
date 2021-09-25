@@ -57,4 +57,5 @@ dependencies {
 
     implementation(project(":auth_api"))
     implementation(project(":common"))
+    implementation(Dependencies.datastore_preferences)
 }

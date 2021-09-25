@@ -16,7 +16,31 @@
 
 package com.komamj.zhongtai.auth.data.source.local
 
+import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
 /**
  * @author komamj
  */
-class LocalDataSource constructor()
+class LocalDataSource constructor(@ApplicationContext private val context: Context) {
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(NAME)
+
+    private val keyIsLogin = booleanPreferencesKey("isLogin")
+
+    fun isLogin(): Flow<Boolean> {
+        return context.dataStore.data
+            .map { preferences ->
+                preferences[keyIsLogin] ?: false
+            }
+    }
+
+    companion object {
+        private const val NAME = "auth"
+    }
+}

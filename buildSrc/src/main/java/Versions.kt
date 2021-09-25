@@ -49,12 +49,12 @@ object Versions {
     const val camerax = "1.0.1"
     const val navigation = "2.3.5"
     const val room = "2.3.0"
-    const val work = "2.5.0"
+    const val work = "2.6.0"
     const val startup = "1.1.0"
     const val paging = "3.0.1"
     const val datastore = "1.0.0"
     const val sqlite = "2.0.1"
-    const val compose = "1.0.1"
+    const val compose = "1.0.2"
     const val activity_compose = "1.3.1"
 
     // dagger

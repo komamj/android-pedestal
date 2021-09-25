@@ -107,7 +107,7 @@ object Dependencies {
 
     // datastore
     const val datastore =
-        "androidx.datastore:datastore-preferences:${Versions.datastore}"
+        "androidx.datastore:datastore:${Versions.datastore}"
     const val datastore_preferences =
         "androidx.datastore:datastore-preferences:${Versions.datastore}"
 

@@ -28,5 +28,5 @@ import dagger.hilt.android.AndroidEntryPoint
 class RegisterFragment : BaseFragment<AuthFragementRegisterBinding, RegisterViewModel>() {
     override fun provideViewModelClass() = RegisterViewModel::class.java
 
-    override fun provideLayoutId() = R.layout.auth_fragement_register
+    override fun provideLayoutId() = R.layout.auth_fragment_register
 }

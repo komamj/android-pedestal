@@ -21,7 +21,7 @@ object Versions {
     // tools
     const val android_build_tools = "7.0.2"
     const val navigation_safe_args_plugin = "2.3.5"
-    const val spotless = "5.14.3"
+    const val spotless = "5.15.2"
     const val ktlint = "0.40.0"
     const val gradle_versions_plugin = "0.39.0"
 
@@ -32,7 +32,7 @@ object Versions {
     const val buildTools = "31.0.0"
 
     // kotlin
-    const val kotlin = "1.5.30"
+    const val kotlin = "1.5.31"
     const val coroutines = "1.5.2"
 
     // jetpack
@@ -42,7 +42,7 @@ object Versions {
     const val activity = "1.3.1"
     const val fragment = "1.3.6"
     const val material = "1.4.0"
-    const val constraint_layout = "2.1.0"
+    const val constraint_layout = "2.1.1"
     const val viewpager2 = "1.0.0"
     const val annotation = "1.2.0"
     const val biometric = "1.1.0"
@@ -66,8 +66,8 @@ object Versions {
 
     // router
     const val arouter_register = "1.0.2"
-    const val arouter_api = "1.5.1"
-    const val arouter_compiler = "1.2.2"
+    const val arouter_api = "1.5.2"
+    const val arouter_compiler = "1.5.2"
 
     // permission
     const val permission = "3.0.0"
@@ -77,7 +77,7 @@ object Versions {
 
     // network
     const val retrofit = "2.9.0"
-    const val gson = "2.8.6"
+    const val gson = "2.8.8"
     const val okhttp = "4.9.1"
     const val okhttp_logging_interceptor = "4.9.1"
     const val okio = "2.9.0"
@@ -92,8 +92,8 @@ object Versions {
     const val glide = "4.12.0"
 
     // 友盟
-    const val um_common = "9.4.2"
-    const val um_asms = "1.4.0"
+    const val um_common = "9.4.4"
+    const val um_asms = "1.4.1"
     const val um_apm = "1.2.0"
     const val um_abtest = "1.0.0"
 
@@ -103,9 +103,9 @@ object Versions {
     // test
     const val junit = "4.13.2"
     const val test = "1.3.0"
-    const val truth = "1.1.2"
+    const val truth = "1.1.3"
     const val test_junit = "1.1.2"
     const val espresso = "3.3.0"
-    const val robolectric = "4.5.1"
+    const val robolectric = "4.6.1"
     const val mockito = "3.12.4"
 }

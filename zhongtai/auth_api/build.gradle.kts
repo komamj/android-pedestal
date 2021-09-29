@@ -5,11 +5,8 @@ plugins {
 }
 
 kapt {
-    correctErrorTypes = true
-    useBuildCache = true
     arguments {
         arg("AROUTER_MODULE_NAME", project.name)
-        arg("AROUTER_GENERATE_DOC", "enable")
     }
 }
 

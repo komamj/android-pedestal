@@ -212,9 +212,9 @@ fun DependencyHandler.lifecycle() {
 fun DependencyHandler.compose() {
     implementation(Dependencies.compose_ui)
     implementation(Dependencies.compose_material)
-    implementation(Dependencies.compose_preview)
+    implementation(Dependencies.compose_ui_tooling)
     implementation(Dependencies.activity_compose)
-    debugImplementation(Dependencies.compose_ui_tooling)
+    debugImplementation(Dependencies.compose_preview)
     androidTestImplementation(Dependencies.compose_ui_test_junit4)
 }
 

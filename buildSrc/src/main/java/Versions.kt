@@ -32,7 +32,7 @@ object Versions {
     const val buildTools = "31.0.0"
 
     // kotlin
-    const val kotlin = "1.5.31"
+    const val kotlin = "1.5.21"
     const val coroutines = "1.5.2"
 
     // jetpack
@@ -43,6 +43,7 @@ object Versions {
     const val fragment = "1.3.6"
     const val material = "1.4.0"
     const val constraint_layout = "2.1.1"
+    const val recyclerview = "1.2.1"
     const val viewpager2 = "1.0.0"
     const val annotation = "1.2.0"
     const val biometric = "1.1.0"

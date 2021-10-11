@@ -55,6 +55,8 @@ object Dependencies {
     const val activity = "androidx.activity:activity-ktx:${Versions.activity}"
     const val constraint_layout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}"
+    const val recyclerview =
+        "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
 

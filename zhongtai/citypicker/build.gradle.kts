@@ -51,5 +51,6 @@ dependencies {
     dagger()
     daggerAndroidX()
 
-    implementation(project(":common"))
+    implementation(Dependencies.recyclerview)
+    implementation(project(":core"))
 }

@@ -17,7 +17,6 @@ android {
     defaultConfig {
         minSdk = Versions.minSdk
         targetSdk = Versions.targetSdk
-        version = 1
 
         resourcePrefix("auth_")
 

@@ -19,7 +19,7 @@ android {
         minSdk = Versions.minSdk
         targetSdk = Versions.targetSdk
 
-        resourcePrefix("auth_")
+        resourcePrefix("citypicker_")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -27,6 +27,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 
     compileOptions {
@@ -50,7 +51,5 @@ dependencies {
     dagger()
     daggerAndroidX()
 
-    implementation(Dependencies.material)
-
-    implementation(project(":core"))
+    implementation(project(":common"))
 }

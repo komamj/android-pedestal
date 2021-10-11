@@ -16,37 +16,16 @@
 
 package com.komamj.zhongtai.citypicker
 
-object CityPicker {
-    private val defaultIndexItems = listOf(
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F",
-        "G",
-        "H",
-        "I",
-        "J",
-        "K",
-        "L",
-        "M",
-        "N",
-        "O",
-        "P",
-        "Q",
-        "R",
-        "S",
-        "T",
-        "U",
-        "V",
-        "W",
-        "X",
-        "Y",
-        "Z",
-    )
+import androidx.fragment.app.Fragment
 
-    @JvmStatic
-    fun show(indexItems: List<String>? = defaultIndexItems) {
+class CityPickerFragment : Fragment() {
+    companion object {
+        @JvmStatic
+        fun newInstance() = CityPickerFragment()
+
+        @JvmStatic
+        fun show() {
+            val fragment = CityPickerFragment()
+        }
     }
 }

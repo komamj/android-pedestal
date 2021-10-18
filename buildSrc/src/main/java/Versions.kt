@@ -99,4 +99,5 @@ object Versions {
     const val mockito = "3.10.0"
     const val rxjava3 = "3.1.0"
     const val rx_android = "3.0.0"
+    const val status_bar_util = "1.5.1"
 }

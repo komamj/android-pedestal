@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.business.launcher
+package com.komamj.business.launcher.register
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -24,21 +24,20 @@ import com.komamj.business.launcher.data.source.LauncherRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @HiltViewModel
-class LauncherViewModel @Inject constructor(private val repository: LauncherRepository) :
+class RegisterViewModel @Inject constructor(private val repository: LauncherRepository) :
     BaseViewModel(){
     var navigation = MutableLiveData<String>()
 
     fun waitForNavigation() {
         viewModelScope.launch{
-            delay(3000)
-            navigation.postValue("x")
+            Thread.sleep(3000)
+            navigation.postValue("")
         }
     }
 }

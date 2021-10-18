@@ -18,9 +18,21 @@ package com.komamj.business.common.architecture.presentation
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
 
 open class BaseViewModel : ViewModel() {
+    var compositeDisposable = CompositeDisposable()
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading
         get() = _isLoading
+
+    protected fun addDisposable(disposable: Disposable){
+        compositeDisposable.add(disposable)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable?.clear()
+    }
 }

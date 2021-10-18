@@ -18,6 +18,7 @@ package com.komamj.business.launcher
 
 import android.os.Bundle
 import android.view.View
+import com.alibaba.android.arouter.launcher.ARouter
 import com.komamj.business.common.architecture.presentation.BaseFragment
 import com.komamj.business.launcher.databinding.LauncherFragmentLauncherBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,8 +28,12 @@ import timber.log.Timber
 class LauncherFragment : BaseFragment<LauncherFragmentLauncherBinding, LauncherViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         Timber.d("onViewCreated")
+        viewModel.waitForNavigation()
+        viewModel.navigation.observe(viewLifecycleOwner, {
+            ARouter.getInstance().build("/launcher/registerActivity")
+                .navigation(context)
+        })
     }
 
     override fun provideLayoutId() = R.layout.launcher_fragment_launcher

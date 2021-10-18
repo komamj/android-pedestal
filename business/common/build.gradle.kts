@@ -72,6 +72,7 @@ dependencies {
     dagger()
     daggerAndroidX()
     rxjava3()
+    statusBarUtil()
     // platform
     api(project(":network"))
     api(project(":log"))

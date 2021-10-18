@@ -21,7 +21,9 @@ import android.os.Bundle
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.callback.NavCallback
 import com.alibaba.android.arouter.launcher.ARouter
+import com.jaeger.library.StatusBarUtil
 import com.komamj.business.common.architecture.presentation.BaseActivity
+import com.komamj.business.launcher.databinding.LauncherActivityLauncherBinding
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
@@ -29,26 +31,11 @@ import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
-class LauncherActivity : BaseActivity() {
+class LauncherActivity : BaseActivity<LauncherActivityLauncherBinding,LauncherViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        StatusBarUtil.setTransparent(this)
         super.onCreate(savedInstanceState)
-        Timber.d("onCreate")
         handleIntent(intent)
-        setContentView(R.layout.launcher_activity_launcher)
-        navigationTo()
-    }
-
-    private fun navigationTo() {
-        var disposable = Observable.interval(3, TimeUnit.SECONDS)
-            .take(1)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                ARouter.getInstance().build("/launcher/registerActivity")
-                    .navigation(this)
-            }, {
-                Timber.e(it)
-            })
-        addDisposable(disposable)
     }
 
     private fun handleIntent(intent: Intent?) {
@@ -74,4 +61,8 @@ class LauncherActivity : BaseActivity() {
         super.onResume()
         Timber.d("onResume")
     }
+
+    override fun provideViewModelClass() = LauncherViewModel::class.java
+
+    override fun provideLayoutId()= R.layout.launcher_activity_launcher
 }

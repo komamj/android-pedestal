@@ -168,6 +168,7 @@ object Dependencies {
 
     const val rx_android= "io.reactivex.rxjava3:rxandroid:${Versions.rx_android}"
     const val rxjava3 ="io.reactivex.rxjava3:rxjava:${Versions.rxjava3}"
+    const val status_bar_util ="com.jaeger.statusbarutil:library:${Versions.status_bar_util}"
 }
 
 fun DependencyHandler.base() {
@@ -244,6 +245,10 @@ fun DependencyHandler.rxjava3() {
     implementation(Dependencies.rx_android)
 }
 
+fun DependencyHandler.statusBarUtil() {
+    implementation(Dependencies.status_bar_util)
+}
+
 fun DependencyHandler.test() {
     testImplementation(Dependencies.junit)
     testImplementation(Dependencies.google_truth)
@@ -299,3 +304,8 @@ private fun DependencyHandler.kaptAndroidTest(depName: String) {
 private fun DependencyHandler.kaptTest(depName: String) {
     add("kaptTest", depName)
 }
+
+private fun DependencyHandler.statusBarUtil(depName: String) {
+    add("statusbar",depName)
+}
+

@@ -13,8 +13,8 @@
         android:src="@drawable/svg_launcher_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:scaleType="centerCrop"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="fitStart"
         />
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

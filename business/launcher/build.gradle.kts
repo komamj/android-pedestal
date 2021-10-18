@@ -56,6 +56,6 @@ dependencies {
     daggerAndroidX()
     rxjava3()
     implementation(project(":common"))
-
+    statusBarUtil()
     test()
 }

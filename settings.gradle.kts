@@ -10,6 +10,8 @@ project(":auth_api").projectDir = file("business/auth_api")
 include(":common")
 project(":common").projectDir = file("business/common")
 // 中台层
+include(":banner")
+project(":banner").projectDir = file("zhongtai/banner")
 include(":imagepicker")
 project(":imagepicker").projectDir = file("zhongtai/imagepicker")
 include(":citypicker")
@@ -25,3 +27,4 @@ include(":statistics")
 project(":statistics").projectDir = file("platform/statistics")
 include(":imageloader")
 project(":imageloader").projectDir = file("platform/imageloader")
+

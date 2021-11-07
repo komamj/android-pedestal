@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.banner
+package com.komamj.middle.banner
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

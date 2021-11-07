@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.citypicker
+package com.komamj.middle.citypicker
 
 object CityPicker {
     private val defaultIndexItems = listOf(

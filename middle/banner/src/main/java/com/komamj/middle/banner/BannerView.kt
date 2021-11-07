@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.banner
+package com.komamj.middle.banner
 
 import android.content.Context
 import android.os.Looper
@@ -24,7 +24,7 @@ import androidx.annotation.Keep
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.os.HandlerCompat
 import androidx.fragment.app.FragmentActivity
-import com.komamj.zhongtai.banner.databinding.BannerViewBinding
+import com.komamj.middle.banner.databinding.BannerViewBinding
 
 @Keep
 class BannerView constructor(

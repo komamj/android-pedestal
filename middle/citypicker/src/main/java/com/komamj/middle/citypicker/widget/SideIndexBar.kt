@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.citypicker.widget
+package com.komamj.middle.citypicker.widget
 
 import android.content.Context
 import android.graphics.Canvas

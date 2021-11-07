@@ -14,18 +14,35 @@
  * limitations under the License.
  */
 
-package com.komamj.zhongtai.citypicker
+package com.komamj.middle.banner
 
+import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 
-class CityPickerFragment : Fragment() {
+class BannerFragment : Fragment() {
+    private var url: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        arguments?.run {
+            url = getString(KEY_URL, "")
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
     companion object {
-        @JvmStatic
-        fun newInstance() = CityPickerFragment()
+        private const val KEY_URL = "key_url"
 
         @JvmStatic
-        fun show() {
-            val fragment = CityPickerFragment()
+        fun newInstance(url: String?) = BannerFragment().apply {
+            arguments = Bundle().apply {
+                putString(KEY_URL, url)
+            }
         }
     }
 }

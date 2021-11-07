@@ -32,20 +32,20 @@ object Versions {
     const val buildTools = "31.0.0"
 
     // kotlin
-    const val kotlin = "1.5.21"
+    const val kotlin = "1.5.31"
     const val coroutines = "1.5.2"
 
     // jetpack
-    const val lifecycle = "2.3.1"
+    const val lifecycle = "2.4.0"
     const val arch_core_testing = "2.1.0"
     const val appcompat = "1.3.1"
-    const val activity = "1.3.1"
+    const val activity = "1.4.0"
     const val fragment = "1.3.6"
     const val material = "1.4.0"
     const val constraint_layout = "2.1.1"
     const val recyclerview = "1.2.1"
     const val viewpager2 = "1.0.0"
-    const val annotation = "1.2.0"
+    const val annotation = "1.3.0"
     const val biometric = "1.1.0"
     const val browser = "1.3.0"
     const val multidex = "2.0.1"
@@ -58,11 +58,11 @@ object Versions {
     const val paging = "3.0.1"
     const val datastore = "1.0.0"
     const val sqlite = "2.0.1"
-    const val compose = "1.0.2"
-    const val activity_compose = "1.3.1"
+    const val compose = "1.0.5"
+    const val activity_compose = "1.4.0"
 
     // dagger
-    const val hilt = "2.38.1"
+    const val hilt = "2.40"
     const val hilt_androidx = "1.0.0"
 
     // router
@@ -78,8 +78,8 @@ object Versions {
 
     // network
     const val retrofit = "2.9.0"
-    const val gson = "2.8.8"
-    const val okhttp = "4.9.1"
+    const val gson = "2.8.9"
+    const val okhttp = "4.9.2"
     const val okhttp_logging_interceptor = "4.9.1"
     const val okio = "2.9.0"
 

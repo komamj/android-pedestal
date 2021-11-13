@@ -17,7 +17,9 @@
 package com.komamj.business.home
 
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     companion object {
         fun newInstance() = HomeFragment()

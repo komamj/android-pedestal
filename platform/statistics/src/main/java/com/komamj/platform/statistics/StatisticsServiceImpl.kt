@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.komamj.platform.statistics
 
 import android.content.Context
 import com.umeng.commonsdk.UMConfigure
-
 
 class StatisticsServiceImpl : StatisticsService {
     override fun preInit(context: Context, appKey: String, channel: String) {

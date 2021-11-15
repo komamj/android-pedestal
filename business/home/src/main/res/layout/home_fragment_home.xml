@@ -3,122 +3,121 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+    <data></data>
 
-    </data>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
+            <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                android:layout_height="wrap_content">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <com.google.android.material.appbar.CollapsingToolbarLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                    <ImageView
-                        android:id="@+id/iv_header_bg"
-                        android:layout_width="0dp"
-                        android:layout_height="100dp"
-                        android:scaleType="centerCrop"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                    <View
-                        android:id="@+id/input"
-                        android:layout_width="0dp"
-                        android:layout_height="42dp"
-                        android:layout_marginStart="@dimen/common_dp_18"
-                        android:layout_marginEnd="@dimen/common_dp_18"
-                        android:background="@drawable/home_bg_card"
-                        app:layout_constraintBottom_toBottomOf="@id/iv_header_bg"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/iv_header_bg" />
+                        <ImageView
+                            android:id="@+id/iv_header_bg"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/iv_location"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="12dp"
-                        android:scaleType="centerCrop"
-                        app:layout_constraintBottom_toBottomOf="@id/input"
-                        app:layout_constraintStart_toStartOf="@id/input"
-                        app:layout_constraintTop_toTopOf="@id/input" />
+                        <View
+                            android:id="@+id/input"
+                            android:layout_width="0dp"
+                            android:layout_height="42dp"
+                            android:layout_marginStart="@dimen/common_dp_18"
+                            android:layout_marginEnd="@dimen/common_dp_18"
+                            android:background="@drawable/home_bg_card"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_header_bg"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_header_bg" />
 
-                    <TextView
-                        android:id="@+id/tv_location"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="@id/input"
-                        app:layout_constraintStart_toEndOf="@id/iv_location"
-                        app:layout_constraintTop_toTopOf="@id/input"
-                        tools:text="成都" />
+                        <ImageView
+                            android:id="@+id/iv_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/home_ic_location"
+                            app:layout_constraintBottom_toBottomOf="@id/input"
+                            app:layout_constraintStart_toStartOf="@id/input"
+                            app:layout_constraintTop_toTopOf="@id/input" />
 
-                    <View
-                        android:id="@+id/divider"
-                        android:layout_width="1dp"
-                        android:layout_height="@dimen/common_dp_16"
-                        app:layout_constraintBottom_toBottomOf="@id/input"
-                        app:layout_constraintStart_toEndOf="@id/tv_location"
-                        app:layout_constraintTop_toTopOf="@id/input" />
+                        <TextView
+                            android:id="@+id/tv_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/input"
+                            app:layout_constraintStart_toEndOf="@id/iv_location"
+                            app:layout_constraintTop_toTopOf="@id/input"
+                            tools:text="成都" />
 
-                    <ImageView
-                        android:id="@+id/iv_search"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:scaleType="centerCrop"
-                        app:layout_constraintBottom_toBottomOf="@id/input"
-                        app:layout_constraintStart_toEndOf="@id/divider"
-                        app:layout_constraintTop_toTopOf="@id/input" />
+                        <View
+                            android:id="@+id/divider"
+                            android:layout_width="1dp"
+                            android:layout_height="@dimen/common_dp_16"
+                            app:layout_constraintBottom_toBottomOf="@id/input"
+                            app:layout_constraintStart_toEndOf="@id/tv_location"
+                            app:layout_constraintTop_toTopOf="@id/input" />
 
-                    <TextView
-                        android:id="@+id/tv_search"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="@id/input"
-                        app:layout_constraintTop_toTopOf="@id/input"
-                        tools:text="知你想要，给你更好" />
+                        <ImageView
+                            android:id="@+id/iv_search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/common_dp_10"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/home_ic_search"
+                            app:layout_constraintBottom_toBottomOf="@id/input"
+                            app:layout_constraintStart_toEndOf="@id/divider"
+                            app:layout_constraintTop_toTopOf="@id/input" />
 
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_layout"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        app:layout_collapseMode="pin"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:tabGravity="start"
-                        app:tabMode="fixed" />
+                        <TextView
+                            android:id="@+id/tv_search"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@id/input"
+                            app:layout_constraintEnd_toEndOf="@id/input"
+                            app:layout_constraintStart_toEndOf="@id/iv_search"
+                            app:layout_constraintTop_toTopOf="@id/input"
+                            tools:text="知你想要，给你更好" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-        </com.google.android.material.appbar.AppBarLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="pin"
+                    app:tabGravity="start"
+                    app:tabMode="fixed"
+                    app:tabPaddingEnd="0dp"
+                    app:tabPaddingStart="0dp" />
+            </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/view_pager2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>

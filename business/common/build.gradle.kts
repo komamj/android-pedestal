@@ -6,11 +6,8 @@ plugins {
 }
 
 kapt {
-    correctErrorTypes = true
-    useBuildCache = true
     arguments {
         arg("AROUTER_MODULE_NAME", project.name)
-        arg("AROUTER_GENERATE_DOC", "enable")
     }
 }
 
@@ -29,6 +26,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 
     compileOptions {
@@ -48,11 +46,6 @@ android {
 }
 
 dependencies {
-    api(Dependencies.kotlin)
-    // coroutines
-    api(Dependencies.coroutines_core)
-    api(Dependencies.coroutines_android)
-    testApi(Dependencies.coroutines_test)
     // lifecycle
     api(Dependencies.lifecycle_runtime)
     api(Dependencies.lifecycle_livedata)
@@ -60,8 +53,11 @@ dependencies {
     testApi(Dependencies.arch_core_testing)
 
     api(Dependencies.appcompat)
-    api(Dependencies.constraint_layout)
+    api(Dependencies.activity)
+    api(Dependencies.fragment)
     api(Dependencies.material)
+    api(Dependencies.constraint_layout)
+    api(Dependencies.viewpager2)
 
     // navigation
     api(Dependencies.navigation_fragment)
@@ -72,8 +68,10 @@ dependencies {
     daggerAndroidX()
 
     // platform
+    api(project(":imageloader"))
     api(project(":network"))
     api(project(":log"))
+    api(project(":core"))
 
     // test
     testApi(Dependencies.junit)

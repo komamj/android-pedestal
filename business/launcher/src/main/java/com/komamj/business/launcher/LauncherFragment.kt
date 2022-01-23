@@ -18,10 +18,10 @@ package com.komamj.business.launcher
 
 import android.os.Bundle
 import android.view.View
-import com.komamj.business.common.architecture.presentation.BaseFragment
+import com.komamj.business.common.presentation.BaseFragment
 import com.komamj.business.launcher.databinding.LauncherFragmentLauncherBinding
+import com.komamj.platform.log.PlatformLog
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 /**
  * @author komamj
@@ -31,7 +31,7 @@ class LauncherFragment : BaseFragment<LauncherFragmentLauncherBinding, LauncherV
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Timber.d("onViewCreated")
+        PlatformLog.d("onViewCreated")
     }
 
     override fun provideLayoutId() = R.layout.launcher_fragment_launcher

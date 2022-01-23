@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/home_bg_card" />
+    <corners
+        android:bottomLeftRadius="@dimen/home_card_radius"
+        android:bottomRightRadius="@dimen/home_card_radius"
+        android:topLeftRadius="@dimen/home_card_radius"
+        android:topRightRadius="@dimen/home_card_radius" />
+</shape>

@@ -1,5 +1,3 @@
-import org.gradle.api.artifacts.dsl.DependencyHandler
-
 /*
  * Copyright 2021 komamj
  *
@@ -16,6 +14,11 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
  * limitations under the License.
  */
 
+import org.gradle.api.artifacts.dsl.DependencyHandler
+
+/**
+ * @author komamj
+ */
 object Dependencies {
     // kotlin
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
@@ -49,13 +52,23 @@ object Dependencies {
     const val arch_core_testing = "androidx.arch.core:core-testing:${Versions.arch_core_testing}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
+    const val activity = "androidx.activity:activity-ktx:${Versions.activity}"
     const val constraint_layout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}"
+    const val recyclerview =
+        "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
 
     // webkit
     const val webkit = "androidx.webkit:webkit:${Versions.webkit}"
+
+    // camerax
+    const val camerax_core = "androidx.camera:camera-core:${Versions.camerax}"
+    const val camerax_camera2 = "androidx.camera:camera-camera2:${Versions.camerax}"
+    const val camerax_lifecycle = "androidx.camera:camera-lifecycle:${Versions.camerax}"
+    const val camerax_view = "androidx.camera:camera-view:${Versions.camerax}"
+    const val camerax_extensions = "androidx.camera:camera-extensions:${Versions.camerax}"
 
     // room
     const val room_runtime = "androidx.room:room-runtime:${Versions.room}"
@@ -66,7 +79,7 @@ object Dependencies {
     const val compose_ui = "androidx.compose.ui:ui:${Versions.compose}"
     const val compose_material = "androidx.compose.material:material:${Versions.compose}"
     const val compose_preview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
-    const val activity_compose = "androidx.activity:activity-compose:${Versions.compose}"
+    const val activity_compose = "androidx.activity:activity-compose:${Versions.activity_compose}"
     const val compose_ui_tooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
     const val compose_ui_test_junit4 = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
 
@@ -95,8 +108,12 @@ object Dependencies {
     // paging
     const val paging = "androidx.paging:paging-runtime:${Versions.paging}"
 
+    const val browser = "androidx.browser:browser:${Versions.browser}"
+
     // datastore
     const val datastore =
+        "androidx.datastore:datastore:${Versions.datastore}"
+    const val datastore_preferences =
         "androidx.datastore:datastore-preferences:${Versions.datastore}"
 
     // sqlite
@@ -112,6 +129,12 @@ object Dependencies {
     const val arouter_api = "com.alibaba:arouter-api:${Versions.arouter_api}"
     const val arouter_compiler =
         "com.alibaba:arouter-compiler:${Versions.arouter_compiler}"
+
+    // 友盟
+    const val um_common = "com.umeng.umsdk:common:${Versions.um_common}"
+    const val um_asms = "com.umeng.umsdk:asms:${Versions.um_asms}"
+    const val um_apm = "com.umeng.umsdk:apm:${Versions.um_apm}"
+    const val um_abtest = "com.umeng.umsdk:abtest:${Versions.um_abtest}"
 
     // timber
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
@@ -191,9 +214,9 @@ fun DependencyHandler.lifecycle() {
 fun DependencyHandler.compose() {
     implementation(Dependencies.compose_ui)
     implementation(Dependencies.compose_material)
-    implementation(Dependencies.compose_preview)
+    implementation(Dependencies.compose_ui_tooling)
     implementation(Dependencies.activity_compose)
-    debugImplementation(Dependencies.compose_ui_tooling)
+    debugImplementation(Dependencies.compose_preview)
     androidTestImplementation(Dependencies.compose_ui_test_junit4)
 }
 
@@ -234,6 +257,13 @@ fun DependencyHandler.network() {
     implementation(Dependencies.okhttp)
     implementation(Dependencies.okhttp_logging_interceptor)
     testImplementation(Dependencies.okhttp_logging_interceptor)
+}
+
+fun DependencyHandler.camerax() {
+    implementation(Dependencies.camerax_camera2)
+    implementation(Dependencies.camerax_lifecycle)
+    implementation(Dependencies.camerax_view)
+    implementation(Dependencies.camerax_extensions)
 }
 
 fun DependencyHandler.test() {

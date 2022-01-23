@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="common_dp_1">1dp</dimen>
-    <dimen name="common_dp_8">8dp</dimen>
-    <dimen name="common_dp_16">16dp</dimen>
-</resources>

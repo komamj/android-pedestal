@@ -34,8 +34,8 @@ android {
     }
 
     lint {
-        isAbortOnError = true
-        isIgnoreWarnings = true
+        abortOnError = true
+        ignoreWarnings = true
         lintConfig = rootProject.file("lint.xml")
     }
 }
